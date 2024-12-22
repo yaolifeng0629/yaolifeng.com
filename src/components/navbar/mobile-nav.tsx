@@ -1,64 +1,62 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import React from 'react';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { MenuIcon } from 'lucide-react';
 
-import { Button, buttonVariants } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { Button } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetTrigger } from '@/components/ui/sheet';
 import RSS from "@/components/rss";
 import { cn } from '@/utils/utils';
 
-import { SLOGAN, WEBSITE } from '@/constants';
-
+import { NICKNAME, SLOGAN, WEBSITE } from '@/constants';
 import { navItems } from './config';
 
-export const MobileNav = React.memo(() => {
+export function MobileNav() {
     const pathname = usePathname();
     const [open, setOpen] = React.useState(false);
-
-    const triggerButton = useMemo(() => (
-        <Button variant={'outline'} size={'icon'} aria-label="菜单" className={cn('sm:hidden')}>
-            <MenuIcon className="size-4" />
-        </Button>
-    ), []);
 
     return (
         <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-                {triggerButton}
+                <Button
+                    variant="ghost"
+                    size="icon"
+                    className="md:hidden"
+                >
+                    <MenuIcon className="h-5 w-5" />
+                    <span className="sr-only">Toggle Menu</span>
+                </Button>
             </SheetTrigger>
-            <SheetContent side={'left'} className='pl-0'>
+            <SheetContent side="left" className="w-[280px] pr-4">
                 <SheetHeader>
                     <SheetTitle>{WEBSITE}</SheetTitle>
                     <SheetDescription>{SLOGAN}</SheetDescription>
                 </SheetHeader>
-                <div className="grid gap-4 pt-8">
-                    {navItems.map((el) => (
+                <nav className="flex flex-col space-y-4 mt-4">
+                    {navItems.map((item) => (
                         <Link
-                            key={el.link}
-                            href={el.link}
+                            key={item.link}
+                            href={item.link}
                             className={cn(
-                                buttonVariants({
-                                    variant: pathname === el.link ? 'default' : 'ghost',
-                                }),
-                                'text-md px-4 py-2 flex gap-2 items-center !justify-start w-full',
+                                'px-4 py-2 text-sm font-medium transition-colors rounded-md',
+                                pathname === item.link
+                                    ? 'bg-accent text-accent-foreground'
+                                    : 'hover:bg-accent/50 text-foreground/60'
                             )}
-                            onClick={() => {
-                                setOpen(false);
-                            }}
+                            onClick={() => setOpen(false)}
                         >
-                            {el.label}
+                            {item.label}
                         </Link>
                     ))}
-                    <div className='mt-4 pl-4'>
-                        <RSS/>
+                    <div className="flex items-center px-4">
+                        <RSS />
                     </div>
-                </div>
+                </nav>
             </SheetContent>
         </Sheet>
     );
-});;
+}

@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation';
 import { useScroll } from 'ahooks';
 
 import RSS from "@/components/rss";
+import { ThemeToggle } from '@/components/theme/theme-toggle';
 import { cn } from '@/utils/utils';
 
 import { NICKNAME, PATHS, WEBSITE } from '@/constants';
@@ -17,47 +18,65 @@ import { MobileNav } from './mobile-nav';
 
 import { Logo } from '../logo';
 import { NextLink } from '../next-link';
+import { Wrapper } from '../wrapper';
 
 export const Navbar = () => {
-    const scroll = useScroll(() => document);
     const pathname = usePathname();
+    const scroll = useScroll();
+
+    const isScrolled = useMemo(() => {
+        if (scroll && scroll.top > 0) return true;
+        return false;
+    }, [scroll]);
 
     const memoizedNextLink = useMemo(() => (
-        <NextLink href={PATHS.SITE_HOME} className={cn('mr-4 hidden sm:flex')} aria-label={NICKNAME}>
-            <Logo />
-            <span className="ml-2 text-base font-semibold text-primary">{WEBSITE}</span>
+        <NextLink href={PATHS.SITE_HOME} className="flex items-center" aria-label={NICKNAME}>
+            <Logo className="sm:block" />
+            <span className="ml-2 text-base font-semibold text-foreground hidden sm:block">{WEBSITE}</span>
         </NextLink>
     ), []);
-
-    const memoizedRSS = useMemo(() => <RSS />, []);
 
     return (
         <header
             className={cn(
-                'w-full sticky top-0 backdrop-blur transition-[background-color,border-width] border-x-0  flex justify-center z-10',
-                (scroll?.top ?? 0) > 60 && 'bg-background/50 border-b border-[#232329]',
+                'sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60',
+                isScrolled ? 'border-border' : 'border-transparent'
             )}
         >
-            <div className="flex h-16 w-full justify-between items-center p-4 sm:p-8 md:max-w-screen-md 2xl:max-w-screen-xl">
-                {memoizedNextLink}
-                <div className="mr-8 hidden h-16 flex-1 items-center justify-end text-base font-medium sm:flex">
-                    {navItems.map((el) => (
-                        <Link
-                            href={el.link}
-                            key={el.link}
-                            className={cn(
-                                'font-normal text-sm text-muted-foreground transition-colors px-4 py-2',
-                                'hover:font-semibold hover:text-primary ',
-                                pathname === el.link && 'font-semibold text-primary',
-                            )}
-                        >
-                            {el.label}
-                        </Link>
-                    ))}
-                    {memoizedRSS}
+            <Wrapper>
+                <div className="flex h-14 items-center">
+                    <div className="flex w-full items-center">
+                        <div className="flex items-center">
+                            {memoizedNextLink}
+                        </div>
+
+                        <div className="flex flex-1 items-center justify-end space-x-2 sm:space-x-4">
+                            <div className="hidden items-center space-x-4 md:flex">
+                                {navItems.map((item) => (
+                                    <Link
+                                        key={item.link}
+                                        href={item.link}
+                                        className={cn(
+                                            'px-4 py-2 text-sm font-medium transition-colors hover:text-foreground/80',
+                                            pathname === item.link
+                                                ? 'text-foreground'
+                                                : 'text-foreground/60'
+                                        )}
+                                    >
+                                        {item.label}
+                                    </Link>
+                                ))}
+                            </div>
+
+                            <div className="flex items-center space-x-2 sm:space-x-4">
+                                <ThemeToggle />
+                                <RSS className="hidden sm:block" />
+                                <MobileNav />
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <MobileNav />
-            </div>
+            </Wrapper>
         </header>
     );
 };

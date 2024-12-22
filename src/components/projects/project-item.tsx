@@ -1,7 +1,5 @@
 import React from 'react';
-
 import Link from 'next/link';
-
 import { Button } from '@/components/ui/button';
 
 interface ProjectItemProps {
@@ -24,7 +22,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
     home_link,
 }) => {
     return (
-        <div className="relative block overflow-hidden rounded-lg border border-[#18181b] no-underline p-3 md:p-4 hover:bg-primary-foreground transition-colors">
+        <div className="relative block overflow-hidden rounded-lg border dark:border-[#18181b] border-border/40 no-underline p-3 md:p-4 hover:bg-accent/50 transition-colors">
             <div className="flex items-start gap-3">
                 <div className="flex-1 min-w-0">
                     <h3 className="text-base md:text-lg font-bold truncate mt-0" title={name}>
@@ -34,7 +32,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
                     <Link
                         href={author_link}
                         target="_blank"
-                        className="mt-1 text-xs font-medium text-gray-300 no-underline hover:text-gray-200 transition-colors"
+                        className="mt-1 text-xs font-medium text-muted-foreground no-underline hover:text-foreground transition-colors"
                     >
                         {author}
                     </Link>
@@ -49,7 +47,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
                 </div>
             </div>
 
-            <p className="mt-3 mb-4 text-sm text-gray-300 line-clamp-2" title={description}>
+            <p className="mt-3 mb-4 text-sm text-muted-foreground line-clamp-2" title={description}>
                 {description}
             </p>
 

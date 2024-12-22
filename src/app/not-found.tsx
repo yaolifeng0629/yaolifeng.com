@@ -1,24 +1,29 @@
 import React from 'react';
-
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Wrapper } from '@/components/wrapper';
+import { IconArrowLeft } from '@/components/icons';
 
 export default function NotFound() {
     return (
-        <div className="grid place-content-center min-h-[calc(100vh-190px)] px-4">
-            <div className="text-center">
-                <h1 className="text-9xl font-black text-gray-200">404</h1>
-
-                <p className="text-2xl font-bold tracking-tight text-gray-500 sm:text-4xl">Uh-oh!</p>
-
-                <p className="mt-4 text-gray-500">We can't find that page.</p>
-
-                <a
-                    href="/"
-                    className="mt-6 inline-block rounded bg-indigo-600 px-5 py-3 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring"
-                >
-                    返回首页
-                </a>
+        <Wrapper>
+            <div className="grid min-h-[calc(100vh-190px)] place-items-center px-6 py-24 sm:py-32 lg:px-8">
+                <div className="text-center">
+                    <p className="text-base font-semibold text-primary">404</p>
+                    <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-5xl">页面不存在</h1>
+                    <p className="mt-6 text-base leading-7 text-muted-foreground">
+                        抱歉，我们找不到您要访问的页面。
+                    </p>
+                    <div className="mt-10 flex items-center justify-center gap-x-6">
+                        <Button asChild variant="default">
+                            <Link href="/" className="flex items-center gap-2">
+                                <IconArrowLeft className="h-4 w-4" />
+                                返回首页
+                            </Link>
+                        </Button>
+                    </div>
+                </div>
             </div>
-        </div>
+        </Wrapper>
     );
 }

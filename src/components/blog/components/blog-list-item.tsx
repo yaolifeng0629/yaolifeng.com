@@ -22,13 +22,13 @@ export const BlogListItem = ({ blog }: BlogListItemProps) => {
         <Link
             href={`${PATHS.SITE_BLOG}/${blog.slug}`}
             className={cn(
-                'flex flex-col justify-between h-full text-primary px-6 py-4 transition-colors rounded-lg overflow-hidden',
-                'bg-transparent hover:bg-primary-foreground',
+                'flex flex-col justify-between h-full text-primary px-6 py-4 transition-all duration-200 rounded-lg overflow-hidden border border-transparent',
+                'hover:border-border hover:shadow-md dark:hover:bg-accent hover:bg-accent/50',
             )}
         >
             <h4 className="mb-2 line-clamp-1 text-xl font-medium" title={blog.title}>{blog.title}</h4>
-            <p className="mb-3 line-clamp-2 text-sm text-muted-foreground min-h-10 text-gray-300" title={blog.description}>{blog.description}</p>
-            <div className="flex space-x-2 text-xs text-muted-foreground ">
+            <p className="mb-3 line-clamp-2 text-sm text-muted-foreground min-h-10" title={blog.description}>{blog.description}</p>
+            <div className="flex space-x-2 text-xs text-muted-foreground">
                 <div className="flex h-5 items-center space-x-1">
                     <Calendar className="size-3" />
                     <time dateTime={new Date(blog.createdAt).toISOString()}>{prettyDate(blog.createdAt)}</time>

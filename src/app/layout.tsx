@@ -4,6 +4,7 @@ import { Console } from '@/components/console';
 import { Favicon } from '@/components/favicon';
 import { Navbar } from '@/components/navbar';
 import ParticlesBg from '@/components/particles/index';
+import { ThemeProvider } from '@/components/theme/theme-provider';
 import { Analytics } from '@vercel/analytics/react';
 
 import '@/styles/global.css';
@@ -19,32 +20,18 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html className="scroll-smooth">
+        <html lang="zh-CN" suppressHydrationWarning>
             <head>
-                <link
-                    rel="alternate"
-                    type="application/rss+xml"
-                    title="姚利锋【博客/片段】"
-                    href="/api/rss"
-                />
-            </head>
-            <body className="flex flex-col items-center dark scroll-smooth">
-                <Navbar />
-                <main className="min-h-[calc(100vh-190px)] w-screen max-w-screen-md 2xl:max-w-7xl px-4 md:px-10 z-[2] scroll-smooth">
-                    {children}
-                </main>
-                <Analytics />
                 <Favicon />
-                <Console />
-                <ParticlesBg
-                    particleCount={100}
-                    particleColor="#98989F"
-                    minParticleSize={1}
-                    maxParticleSize={3}
-                    minSpeed={0.1}
-                    maxSpeed={1}
-                    fadeInDuration={2000}
-                />
+            </head>
+            <body>
+                <ThemeProvider defaultTheme="dark" storageKey="theme">
+                    {/* <ParticlesBg /> */}
+                    <Navbar />
+                    <main className="flex-1">{children}</main>
+                    <Console />
+                    <Analytics />
+                </ThemeProvider>
             </body>
         </html>
     );
