@@ -25,5 +25,9 @@ export const navItems: Array<{
             label: PATHS_MAP[PATHS.SITE_ABOUT],
             link: PATHS.SITE_ABOUT
         },
+        {
+            label: PATHS_MAP[PATHS.SITE_LINKS],
+            link: PATHS.SITE_LINKS
+        },
 
     ];
