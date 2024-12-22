@@ -16,6 +16,19 @@ export default {
         './src/styles/*.css',
     ],
     theme: {
+        container: {
+            center: true,
+            padding: {
+                DEFAULT: '1rem',
+                md: '1.5rem',
+            },
+            screens: {
+                sm: '640px',
+                md: '768px',
+                lg: '1024px',
+                xl: '1200px',
+            },
+        },
         screens: {
             sm: '640px',
             // => @media (min-width: 640px) { ... }

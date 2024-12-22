@@ -4,7 +4,7 @@ interface WrapperProps extends React.HTMLAttributes<HTMLDivElement>, React.Props
 
 export const Wrapper = ({ className, children, ...props }: WrapperProps) => {
     return (
-        <div {...props} className={cn('max-w-screen-wrapper mx-auto px-6', className)}>
+        <div {...props} className={cn('container mx-auto px-4 md:px-6', className)}>
             {children}
         </div>
     );
