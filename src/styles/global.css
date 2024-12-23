@@ -6,6 +6,7 @@
 @import "./bytemd.css";
 @import "./github.css";
 @import "./github-dark.css";
+@import "./code-block.css";
 
 @layer base {
   :root {
