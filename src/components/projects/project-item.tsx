@@ -47,7 +47,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
                 </div>
             </div>
 
-            <p className="mt-3 mb-4 text-sm text-muted-foreground line-clamp-2" title={description}>
+            <p className="mt-3 mb-4 text-sm text-muted-foreground line-clamp-2 min-h-10" title={description}>
                 {description}
             </p>
 
