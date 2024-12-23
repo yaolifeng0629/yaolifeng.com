@@ -16,7 +16,12 @@ const friendLinks: FriendLink[] = [
     {
         name: 'LINUX DO',
         desc: '新的理想型社区',
-        url: 'https://linux.do/'
+        url: 'https://linux.do'
+    },
+    {
+        name: 'Corey Chiu',
+        desc: '',
+        url: 'https://coreychiu.com'
     },
 ];
 
@@ -28,7 +33,7 @@ export default function LinksPage() {
                 {friendLinks.map((link, index) => (
                     <li key={index}>
                         <a
-                            href={link.url}
+                            href={link.url + '?utm_source=yaolifeng.com'}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="block w-full border border-[#18181b] rounded-lg hover:bg-primary-foreground transition-colors px-4 py-3"
