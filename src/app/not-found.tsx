@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Wrapper } from '@/components/wrapper';
-import { IconArrowLeft } from '@/components/icons';
 
 export default function NotFound() {
     return (
@@ -17,8 +16,7 @@ export default function NotFound() {
                     <div className="mt-10 flex items-center justify-center gap-x-6">
                         <Button asChild variant="default">
                             <Link href="/" className="flex items-center gap-2">
-                                <IconArrowLeft className="h-4 w-4" />
-                                返回首页
+                                ← 返回首页
                             </Link>
                         </Button>
                     </div>
