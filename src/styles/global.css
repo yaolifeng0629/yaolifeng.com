@@ -6,51 +6,68 @@
 @import "./bytemd.css";
 @import "./github.css";
 @import "./github-dark.css";
+@import "./code-block.css";
 
-@layer components {
-  .border-border {
-    border-color: var(--border);
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+    --selection-background: hsl(var(--primary) / 0.1);
+    --selection-color: hsl(var(--primary));
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --selection-background: hsl(var(--primary) / 0.2);
+    --selection-color: hsl(var(--primary));
   }
 }
 
 @layer base {
-  :root {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --border: 240, 8%, 15%;
-    --selection-color: rgb(0, 0, 0);
-    --selection-background: rgb(255, 239, 92);
-    --radius: 1rem;
-  }
-
-  *,
-  ::before,
-  ::after {
+  * {
     @apply border-border;
   }
-
-  html,
   body {
-    @apply bg-background text-foreground antialiased;
-    scroll-behavior: smooth;
+    @apply bg-background text-foreground;
   }
 }
+
 /* 适配 shiki 深色模式 */
 html.dark .shiki,
 html.dark .shiki span {
@@ -62,24 +79,22 @@ html.dark .shiki span {
 }
 
 /* 选中文本样式 */
-::selection,
-strong::selection,
-.search-result__item em {
+::selection {
   color: var(--selection-color);
   background: var(--selection-background);
-  -webkit-text-fill-color: unset;
-  background-image: none;
+  -webkit-text-fill-color: currentColor;
 }
 
 /* 修复首页 NickName 复制颜色失效问题 */
-/* Tips: 原因是 strong 标签内使用了 WebkitTextFillColor 属性，这个属性覆盖了 ::selection 伪元素定义的颜色 */
 .custom-strong::selection {
-  background-image: none !important;
   color: var(--selection-color) !important;
   background: var(--selection-background) !important;
-  -webkit-text-fill-color: rgb(0, 0, 0) !important;
+  -webkit-text-fill-color: currentColor !important;
 }
-/* 搜索结果 */
+
+/* 搜索结果高亮 */
 .search-result__item em {
   @apply mx-1 font-normal not-italic;
+  color: var(--selection-color);
+  background: var(--selection-background);
 }

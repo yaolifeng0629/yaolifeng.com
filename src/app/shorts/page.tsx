@@ -1,7 +1,8 @@
-import { Box, Card, Text } from '@radix-ui/themes';
+import { Card, Text } from '@radix-ui/themes';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { ProgressiveImage } from '@/components/progressive-image';
+import { Wrapper } from '@/components/wrapper';
 
 import { getShort, Short } from '@/api/shorts';
 
@@ -17,14 +18,14 @@ const Page: NextPage = async () => {
     const shorts = await getShort();
 
     return (
-        <>
-            <h2 className="pb-8 text-3xl font-bold md:text-4xl px-6 pt-8">最新片段</h2>
-            <Box my="4" className="columns-3xs space-y-4 px-6 mb-24" >
+        <Wrapper className="flex flex-col px-6 pb-24 pt-8">
+            <h2 className="pb-8 text-3xl font-bold md:text-4xl">最新片段</h2>
+            <div className="columns-3xs gap-4 space-y-4">
                 {shorts.map((short: any) => (
                     <ShortItem key={short.id} short={short} />
                 ))}
-            </Box>
-        </>
+            </div>
+        </Wrapper>
     );
 };
 
@@ -32,19 +33,17 @@ function ShortItem({ short }: { short: Short }) {
     const photo = short.url;
 
     return (
-        <Card size="2" className="border border-[#2f2f2f] rounded-[8px] p-0 overflow-hidden short-item">
-            <Link href={`/shorts/${short.slug}`} className="flex flex-col">
-                {
-                    <ProgressiveImage
-                        src={photo}
-                        alt={short.title}
-                        width={300}
-                        height={250}
-                        layout="responsive"
-                        className="h-full min-h-[150px]"
-                    />
-                }
-                <Text as="p" size="3" className="px-3 py-3 text-gray-50" title={short.title || short.description}>
+        <Card size="1" className="border dark:border-[#2f2f2f] border-border/40 rounded-[8px] p-0 overflow-hidden break-inside-avoid">
+            <Link href={`/shorts/${short.slug}`}>
+                <ProgressiveImage
+                    src={photo}
+                    alt={short.title}
+                    width={300}
+                    height={200}
+                    layout="responsive"
+                    className="w-full"
+                />
+                <Text as="p" size="2" className="px-3 py-2 text-foreground/90">
                     {short.title || short.description}
                 </Text>
             </Link>
