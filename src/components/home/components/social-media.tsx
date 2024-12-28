@@ -23,11 +23,11 @@ const socialMediaList: Array<{
         label: 'Github(yaolifeng0629)',
         link: GITHUB_PAGE,
     },
-    // {
-    //     icon: <IconLogoWeChat className="text-2xl" />,
-    //     label: '微信号(15829485647)',
-    //     link: WECHAT,
-    // },
+    {
+        icon: <IconLogoWeChat className="text-2xl" />,
+        label: '微信号(15829485647)',
+        link: WECHAT,
+    },
     // {
     //     icon: <IconLogoYoutube className="text-2xl" />,
     //     label: 'Youtube(Immerse)',
@@ -63,11 +63,11 @@ const socialMediaList: Array<{
     //     label: '哔哩哔哩(Immerse_001)',
     //     link: BILIBILI_PAGE
     // },
-    {
-        icon: <IconLogoJuejin className={`text-2xl text-[#2985fc]`} />,
-        label: '掘金(Immerse)',
-        link: JUEJIN_PAGE,
-    },
+    // {
+    //     icon: <IconLogoJuejin className={`text-2xl text-[#2985fc]`} />,
+    //     label: '掘金(Immerse)',
+    //     link: JUEJIN_PAGE,
+    // },
 ];
 
 export default socialMediaList;

@@ -8,7 +8,7 @@ export const NICKNAME = '姚利锋';
 export const GITHUB_PAGE = 'https://github.com/yaolifeng0629';
 
 /** 微信号图片 */
-export const WECHAT = 'https://cdn.jsdelivr.net/gh/yaolifeng0629/oss@main/images/wechat_1729349882.jpg';
+export const WECHAT = '/other/wechat.webp';
 
 // YouTube 个人页
 export const YOUTUBE = 'https://www.youtube.com/channel/UCTcYdMnMZtdyuOyxMj6OJnA';
@@ -20,7 +20,7 @@ export const TWITTER = 'https://x.com/Immerse_code';
 export const GITEE = 'https://gitee.com/yaolifeng0529';
 
 // 微信公众号
-export const WEIXIN_OFFICIAL = 'https://mp.weixin.qq.com/s/xui2UBEtkJc46Q-ImWrv8g';
+export const WEIXIN_OFFICIAL = '/other/wx_public_account.webp';
 
 /** 网站代码 Github 地址 */
 export const SOURCE_CODE_GITHUB_PAGE = 'https://github.com/yaolifeng0629/yaolifeng.me';
