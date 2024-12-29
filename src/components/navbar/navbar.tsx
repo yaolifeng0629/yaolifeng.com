@@ -8,6 +8,8 @@ import { usePathname } from 'next/navigation';
 import { useScroll } from 'ahooks';
 
 import RSS from "@/components/rss";
+import Sponsor from "@/components/sponsor";
+
 import { ThemeToggle } from '@/components/theme/theme-toggle';
 import { cn } from '@/utils/utils';
 
@@ -71,6 +73,7 @@ export const Navbar = () => {
                             <div className="flex items-center space-x-2 sm:space-x-4">
                                 <ThemeToggle />
                                 <RSS className="hidden sm:block" />
+                                <Sponsor className="hidden sm:block" />
                                 <MobileNav />
                             </div>
                         </div>
