@@ -21,6 +21,10 @@ const friendLinks: FriendLink[] = [
         name: 'Corey Chiu',
         url: 'https://coreychiu.com'
     },
+    {
+        name: 'W2Solo',
+        url: 'https://w2solo.com/'
+    },
 ];
 
 export default function LinksPage() {
