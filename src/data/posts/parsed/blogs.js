@@ -51,8 +51,17 @@ import {
 
 export default [
     {
+        id: 'b70dae61-3a2a-41a7-b719-ee852030192f',
+        slug: 'vanished_month_ai_projects_amazing',
+        createdAt: 1735461621647,
+        title: '消失的一个多月，我用AI做了三个项目，简直不要太爽！',
+        description:
+            '作者在消失的一个多月里，利用AI技术完成了三个项目，体验非常愉快。这些项目可能涉及前端开发中的自动化、智能优化或创新功能，通过AI提升了开发效率和用户体验。作者分享了使用AI工具的心得，展示了如何将AI融入前端工作流，解决复杂问题并实现高效开发。整个过程不仅节省了时间，还带来了技术上的突破和成就感，体现了AI在现代前端开发中的强大潜力。',
+        tags: [JAVASCRIPT, REACT, VUE, NODEJS],
+        content: '/blogs/2024/消失的一个多月，我用AI做了三个项目，简直不要太爽！.md',
+    },
+    {
         id: '8836d4d8-04bf-4a82-8568-ee66f85e3982',
-        url: '',
         slug: 'frontend_image_progressive_loading',
         createdAt: 1731813969335,
         title: '前端优化图片渐进式加载',
@@ -63,7 +72,6 @@ export default [
     },
     {
         id: 'b4bdcf90-d0a5-4ac9-97c1-480e783f68eb',
-        url: '',
         slug: 'ios_clipboard_image_height_issue_solution',
         createdAt: 1729757315687,
         title: 'IOS剪贴板图片高度异常问题及解决方案',
@@ -74,7 +82,6 @@ export default [
     },
     {
         id: '691ea736-674a-4f93-bc60-60af77cd8377',
-        url: '',
         slug: 'npm_package_development_optimization_guide',
         createdAt: 1729756995849,
         title: 'NPM包开发与优化全面指南',
