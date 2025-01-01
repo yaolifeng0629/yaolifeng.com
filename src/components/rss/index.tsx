@@ -10,8 +10,9 @@ type Props = {
 const RSS = ({ className }: Props) => {
     return (
         <Link
-            href="/rss.xml"
+            href="/api/rss"
             target="_blank"
+            rel="noopener noreferrer"
             className={cn('py-2 text-sm font-medium transition-colors hover:text-foreground/80 flex items-center', className)}
             title="RSS"
         >
