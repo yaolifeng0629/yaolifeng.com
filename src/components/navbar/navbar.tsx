@@ -32,9 +32,9 @@ export const Navbar = () => {
     }, [scroll]);
 
     const memoizedNextLink = useMemo(() => (
-        <NextLink href={PATHS.SITE_HOME} className="flex items-center" aria-label={NICKNAME}>
+        <NextLink href={PATHS.SITE_HOME} className="flex items-center" style={{ paddingLeft: 0 }} aria-label={NICKNAME}>
             <Logo className="sm:block" />
-            <span className="ml-2 text-base font-semibold text-foreground hidden sm:block">{WEBSITE}</span>
+            <span className="ml-3 text-lg font-semibold text-foreground">{WEBSITE}</span>
         </NextLink>
     ), []);
 

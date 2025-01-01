@@ -15,12 +15,12 @@ export const Logo = ({ className }: Props) => {
     const { theme } = useTheme();
 
     return (
-        <div className={cn('relative w-8 h-8', className)}>
+        <div className={cn('relative w-9 h-9', className)}>
             <Image
                 src={theme === 'light' ? ImageAssets.logoDark : ImageAssets.logoLight}
                 width={32}
                 height={32}
-                className="h-8 w-8"
+                className="h-9 w-9"
                 alt={WEBSITE}
                 priority
             />

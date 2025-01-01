@@ -29,9 +29,9 @@ const friendLinks: FriendLink[] = [
 
 export default function LinksPage() {
     return (
-        <Wrapper className="flex flex-col px-8 pb-24 pt-8">
+        <Wrapper className="flex flex-col px-6 pb-24 pt-8">
             <div className="prose dark:prose-invert max-w-none">
-                <h1 className="text-4xl font-bold md:text-5xl">友情链接</h1>
+                <h1 className="text-3xl font-bold md:text-4xl">友情链接</h1>
                 <p className="text-muted-foreground">欢迎交换友链～</p>
                 <ul className="!pl-0 grid grid-cols-1 md:grid-cols-4 gap-6 list-none">
                     {friendLinks.map((link, index) => (
