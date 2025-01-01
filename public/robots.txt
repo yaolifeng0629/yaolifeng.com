@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://yaolifeng.vercel.app
+Host: https://yaolifeng.com
 
 # Sitemaps
-Sitemap: https://yaolifeng.vercel.app/sitemap.xml
+Sitemap: https://yaolifeng.com/sitemap.xml
