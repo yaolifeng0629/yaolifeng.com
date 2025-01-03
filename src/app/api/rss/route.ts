@@ -8,7 +8,7 @@ import path from 'path';
 import blogPosts from '@/data/posts/parsed/blogs';
 import shorts from '@/data/shorts/parsed/shorts';
 
-const SITE_URL = process.env.VERCEL_URL;
+const SITE_URL = process.env.NEXT_PUBLIC_VERCEL_URL;
 
 const AUTHOR = {
     name: '姚利锋',
