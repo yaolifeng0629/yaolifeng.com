@@ -6,6 +6,7 @@ import { Navbar } from '@/components/navbar';
 import ParticlesBg from '@/components/particles/index';
 import { ThemeProvider } from '@/components/theme/theme-provider';
 import { Analytics } from '@vercel/analytics/react';
+import { ReactHotToaster } from '@/components/ui/toast';
 
 import '@/styles/global.css';
 
@@ -31,6 +32,7 @@ export default function RootLayout({
                     <main className="flex-1">{children}</main>
                     <Console />
                     <Analytics />
+                    <ReactHotToaster />
                 </ThemeProvider>
             </body>
         </html>

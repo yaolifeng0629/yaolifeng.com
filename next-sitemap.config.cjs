@@ -1,4 +1,4 @@
-const siteUrl = process.env.SITE_URL || 'https://yaolifeng.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yaolifeng.com';
 
 // more detail to: https://github.com/iamvishnusankar/next-sitemap
 
