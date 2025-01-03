@@ -13,10 +13,10 @@ interface FriendLink {
 }
 
 const friendLinks: FriendLink[] = [
-    {
-        name: 'LINUX DO',
-        url: 'https://linux.do'
-    },
+    // {
+    //     name: 'LINUX DO',
+    //     url: 'https://linux.do'
+    // },
     {
         name: 'Corey Chiu',
         url: 'https://coreychiu.com'
