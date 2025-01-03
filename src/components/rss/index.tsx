@@ -8,12 +8,15 @@ type Props = {
 };
 
 const RSS = ({ className }: Props) => {
-    const isProduction = process.env.NODE_ENV !== 'development';
-    const rssUrl = `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/rss`;
+    // const isProduction = process.env.NODE_ENV !== 'development';
+    // const rssUrl = `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/rss`;
+    const rssUrl = process.env.NODE_ENV === 'development'
+        ? 'http://localhost:3000/api/rss'
+        : 'https://yaolifeng.com/api/rss';
 
     const copyToClipboard = async () => {
         try {
-            await navigator.clipboard.writeText(isProduction ? 'https://yaolifeng.com/api/rss' : rssUrl);
+            await navigator.clipboard.writeText(rssUrl);
             showSuccessToast('已复制到粘贴板');
         } catch (err) {
             console.error('Failed to copy:', err);
