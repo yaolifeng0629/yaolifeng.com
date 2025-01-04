@@ -37,7 +37,7 @@ export default function LinksPage() {
                     {friendLinks.map((link, index) => (
                         <li key={index} className="!ml-0 !marker:content-none">
                             <a
-                                href={link.url}
+                                href={link.url + '?utm_source=yaolifeng.com'}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="group block w-full rounded-xl border border-border bg-card hover:bg-accent/50 transition-all duration-300 px-8 py-6 hover:shadow-lg hover:-translate-y-1"
