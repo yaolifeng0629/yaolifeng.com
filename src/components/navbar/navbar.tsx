@@ -74,16 +74,25 @@ export const Navbar = () => {
                                     </Link>
                                 ))}
 
-                                <DropdownMenu>
-                                    <DropdownMenuTrigger className="flex items-center">
-                                        <MoreHorizontal className="h-5 w-5 text-foreground/60 hover:text-foreground/80" />
-                                    </DropdownMenuTrigger>
-                                    <DropdownMenuContent align="end">
-                                        <DropdownMenuItem asChild>
-                                            <Link href={PATHS.SITE_LINKS}>友链</Link>
-                                        </DropdownMenuItem>
-                                    </DropdownMenuContent>
-                                </DropdownMenu>
+                                <div className="relative inline-block">
+                                    <DropdownMenu modal={false}>
+                                        <DropdownMenuTrigger className="flex h-9 w-9 items-center text-foreground/60 justify-center rounded-md bg-transparent p-0 hover:text-accent-foreground">
+                                            <MoreHorizontal className="h-5 w-5" />
+                                        </DropdownMenuTrigger>
+                                        <DropdownMenuContent
+                                            align="end"
+                                            sideOffset={8}
+                                            className="z-[100] w-[140px] rounded-md border bg-popover p-1 text-popover-foreground shadow-md"
+                                            forceMount
+                                        >
+                                            <DropdownMenuItem className="relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                                <Link href={PATHS.SITE_LINKS} className="w-full">
+                                                    友链
+                                                </Link>
+                                            </DropdownMenuItem>
+                                        </DropdownMenuContent>
+                                    </DropdownMenu>
+                                </div>
                             </div>
 
                             <div className="flex items-center space-x-2 sm:space-x-4">
