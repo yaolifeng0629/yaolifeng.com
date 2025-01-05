@@ -59,7 +59,7 @@ export default function Page() {
                     <h2>我是谁</h2>
                     <p>
                         Hi~ 我是{NICKNAME}
-                        ，一名前端开发 ，喜欢沉浸式
+                        ，一个独立前端开发者
                     </p>
                 </div>
 

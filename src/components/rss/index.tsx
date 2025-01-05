@@ -32,7 +32,7 @@ const RSS = ({ className }: Props) => {
         <DropdownMenu.Root>
             <DropdownMenu.Trigger asChild>
                 <button
-                    className={cn('py-2 text-sm font-medium transition-colors hover:text-foreground/80 flex items-center', className)}
+                    className={cn('py-2 text-sm text-foreground/60 font-medium transition-colors hover:text-foreground flex items-center', className)}
                     title="RSS Feed"
                 >
                     <RssIcon className="h-4 w-4" />

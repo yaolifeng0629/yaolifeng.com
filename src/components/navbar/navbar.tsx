@@ -1,26 +1,28 @@
 'use client';
 
 import React, { useMemo } from 'react';
-
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
 import { useScroll } from 'ahooks';
+import { MoreHorizontal } from 'lucide-react';
 
 import RSS from "@/components/rss";
 import Sponsor from "@/components/sponsor";
-
 import { ThemeToggle } from '@/components/theme/theme-toggle';
 import { cn } from '@/utils/utils';
-
 import { NICKNAME, PATHS, WEBSITE } from '@/constants';
-
 import { navItems } from './config';
 import { MobileNav } from './mobile-nav';
-
 import { Logo } from '../logo';
 import { NextLink } from '../next-link';
 import { Wrapper } from '../wrapper';
+
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export const Navbar = () => {
     const pathname = usePathname();
@@ -38,6 +40,9 @@ export const Navbar = () => {
         </NextLink>
     ), []);
 
+    // 过滤掉友链，将其放入更多菜单
+    const mainNavItems = navItems.filter(item => item.link !== PATHS.SITE_LINKS);
+
     return (
         <header
             className={cn(
@@ -54,7 +59,7 @@ export const Navbar = () => {
 
                         <div className="flex flex-1 items-center justify-end space-x-2 sm:space-x-4">
                             <div className="hidden items-center space-x-4 md:flex">
-                                {navItems.map((item) => (
+                                {mainNavItems.map((item) => (
                                     <Link
                                         key={item.link}
                                         href={item.link}
@@ -68,6 +73,17 @@ export const Navbar = () => {
                                         {item.label}
                                     </Link>
                                 ))}
+
+                                <DropdownMenu>
+                                    <DropdownMenuTrigger className="flex items-center">
+                                        <MoreHorizontal className="h-5 w-5 text-foreground/60 hover:text-foreground/80" />
+                                    </DropdownMenuTrigger>
+                                    <DropdownMenuContent align="end">
+                                        <DropdownMenuItem asChild>
+                                            <Link href={PATHS.SITE_LINKS}>友链</Link>
+                                        </DropdownMenuItem>
+                                    </DropdownMenuContent>
+                                </DropdownMenu>
                             </div>
 
                             <div className="flex items-center space-x-2 sm:space-x-4">
