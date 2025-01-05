@@ -33,7 +33,7 @@ export const Projects = [
         link: 'https://github.com/yaolifeng0629/Awesome-independent-tools',
         author: 'yaolifeng0629',
         author_link: 'https://github.com/yaolifeng0629',
-        avatar: 'https://ims-oss.us.kg/projects/favicon-indietools.png',
+        avatar: '/other/indietool.svg',
         home_link: 'https://www.indietools.work',
     },
     {

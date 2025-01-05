@@ -25,6 +25,10 @@ const friendLinks: FriendLink[] = [
         name: 'W2Solo',
         url: 'https://w2solo.com/'
     },
+    {
+        name: '陈随易',
+        url: 'https://me.yicode.tech'
+    },
 ];
 
 export default function LinksPage() {

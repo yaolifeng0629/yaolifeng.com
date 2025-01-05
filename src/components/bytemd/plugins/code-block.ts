@@ -44,8 +44,57 @@ export const codeBlockPlugin = (): BytemdPlugin => {
                 visit(tree, 'element', (node) => {
                     if (node.tagName === 'pre') {
                         // Add copy button and language indicator
-                        node.properties.className = `${node.properties.className || ''} relative group/code`.trim();
+                        node.properties.className = `${node.properties.className || ''} relative group/code code-with-lines`.trim();
                         node.children.push(copyBtnNode);
+
+                        // Process code element to add line numbers
+                        visit(node, 'element', (code) => {
+                            if (code.tagName === 'code') {
+                                // 将每行代码包装在 line 类的 span 中
+                                const newChildren = [];
+                                let currentLine = [];
+
+                                // 遍历所有子节点
+                                code.children.forEach((child, index) => {
+                                    if (child.type === 'text') {
+                                        // 处理文本节点
+                                        const lines = child.value.split('\n');
+                                        lines.forEach((line, lineIndex) => {
+                                            currentLine.push({
+                                                type: 'text',
+                                                value: line
+                                            });
+
+                                            // 如果不是最后一行，创建新的行
+                                            if (lineIndex < lines.length - 1) {
+                                                newChildren.push({
+                                                    type: 'element',
+                                                    tagName: 'span',
+                                                    properties: { className: ['line'] },
+                                                    children: [...currentLine]
+                                                });
+                                                currentLine = [];
+                                            }
+                                        });
+                                    } else {
+                                        // 保持其他节点不变（如高亮标记）
+                                        currentLine.push(child);
+                                    }
+
+                                    // 如果是最后一个节点，添加最后一行
+                                    if (index === code.children.length - 1 && currentLine.length > 0) {
+                                        newChildren.push({
+                                            type: 'element',
+                                            tagName: 'span',
+                                            properties: { className: ['line'] },
+                                            children: currentLine
+                                        });
+                                    }
+                                });
+
+                                code.children = newChildren;
+                            }
+                        });
                     }
 
                     visit(tree, 'element', (code, idx, parent) => {

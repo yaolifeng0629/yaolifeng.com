@@ -30,8 +30,8 @@
     --input: 240 5.9% 90%;
     --ring: 240 5.9% 10%;
     --radius: 0.5rem;
-    --selection-background: hsl(var(--primary) / 0.1);
-    --selection-color: hsl(var(--primary));
+    --selection-background: 196 100% 50% / 0.15;
+    --selection-color: 196 100% 40%;
   }
 
   .dark {
@@ -54,8 +54,8 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
-    --selection-background: hsl(var(--primary) / 0.2);
-    --selection-color: hsl(var(--primary));
+    --selection-background: 196 100% 50% / 0.2;
+    --selection-color: 196 100% 70%;
   }
 }
 
@@ -80,16 +80,28 @@ html.dark .shiki span {
 
 /* 选中文本样式 */
 ::selection {
-  color: var(--selection-color);
-  background: var(--selection-background);
-  -webkit-text-fill-color: currentColor;
+  color: hsl(var(--selection-color));
+  background: hsl(var(--selection-background));
+  text-shadow: none;
+}
+
+::-moz-selection {
+  color: hsl(var(--selection-color));
+  background: hsl(var(--selection-background));
+  text-shadow: none;
 }
 
 /* 修复首页 NickName 复制颜色失效问题 */
 .custom-strong::selection {
-  color: var(--selection-color) !important;
-  background: var(--selection-background) !important;
-  -webkit-text-fill-color: currentColor !important;
+  color: hsl(var(--selection-color)) !important;
+  background: hsl(var(--selection-background)) !important;
+  text-shadow: none !important;
+}
+
+.custom-strong::-moz-selection {
+  color: hsl(var(--selection-color)) !important;
+  background: hsl(var(--selection-background)) !important;
+  text-shadow: none !important;
 }
 
 /* 搜索结果高亮 */
