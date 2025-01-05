@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, Request } from 'next/server';
 
 import { Feed } from 'feed';
 import fs from 'fs';
@@ -74,42 +74,41 @@ async function processContentItem(item: ContentItem, type: 'blog' | 'short', fee
     }
 }
 
-export async function GET() {
-    try {
-        const feed = new Feed({
-            title: '姚利锋',
-            description: '一个简单，平凡的前端记录者',
-            id: SITE_URL,
-            link: SITE_URL,
-            language: 'zh-CN',
-            favicon: `${SITE_URL}/images/Immerse-dark.svg`,
-            copyright: `All rights reserved ${new Date().getFullYear()}`,
-            updated: new Date(),
-            generator: 'Feed for Node.js',
-            author: AUTHOR,
-            feedLinks: {
-                rss2: `${SITE_URL}/api/rss`,
-                json: `${SITE_URL}/api/rss?format=json`,
-            },
-        });
+export async function GET(request: Request) {
+    const { searchParams } = new URL(request.url);
+    const type = searchParams.get('type') || 'all';
 
-        const allContent = [
-            ...blogPosts.map((post) => ({ ...post, type: 'blog' as const })),
-            ...shorts.map((short) => ({ ...short, type: 'short' as const })),
-        ].sort((a, b) => b.createdAt - a.createdAt);
+    const feed = new Feed({
+        title: '姚利锋的个人网站',
+        description: '记录我的思考和学习',
+        id: SITE_URL!,
+        link: SITE_URL,
+        language: 'zh-CN',
+        favicon: `${SITE_URL}/favicon.ico`,
+        copyright: 'All rights reserved 2024, 姚利锋',
+        author: AUTHOR,
+    });
 
-        for (const item of allContent) {
-            await processContentItem(item, item.type, feed);
-        }
-
-        return new NextResponse(feed.rss2(), {
-            headers: {
-                'Content-Type': 'application/xml',
-                'Cache-Control': 's-maxage=3600, stale-while-revalidate',
-            },
-        });
-    } catch (error) {
-        console.error('Error generating RSS feed:', error);
-        return NextResponse.json({ error: 'Error generating RSS feed' }, { status: 500 });
+    let items: ContentItem[] = [];
+    switch (type) {
+        case 'blogs':
+            items = blogPosts;
+            break;
+        case 'shorts':
+            items = shorts;
+            break;
+        default:
+            items = [...blogPosts, ...shorts].sort((a, b) => b.createdAt - a.createdAt);
     }
+
+    for (const item of items) {
+        const itemType = 'url' in item ? 'short' : 'blog';
+        await processContentItem(item, itemType, feed);
+    }
+
+    return new NextResponse(feed.rss2(), {
+        headers: {
+            'Content-Type': 'application/xml',
+        },
+    });
 }
