@@ -108,6 +108,7 @@ export const ProgressiveImage: React.FC<ProgressiveImageProps> = ({
         const baseStyle: React.CSSProperties = {
             position: 'relative',
             overflow: 'hidden',
+            minHeight: 160,
         };
 
         switch (layout) {
