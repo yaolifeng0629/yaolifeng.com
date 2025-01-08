@@ -16,7 +16,7 @@
 -   说来惭愧，都工作快四年了，连个像样的个人博客都没有，实在有点说不过去。
 -   总算有了个能放自己折腾成果的地方，以后可以在上面分享一些学习心得和项目经验啦！
 -   PS：这个项目并不是从 0 到 1 完成的，借助了 `Github` 上大佬的模板，修改了一下加了一些自己的东西上去
-    ![](https://ims-oss.us.kg/other/personal.png)
+    ![](/other/b70dae61-3a2a-41a7-b719-ee852030192f/personal.png)
 
 ### 项目二：[独立开发者出海导航站](https://www.indietools.work)
 
@@ -27,11 +27,11 @@
 
 -   简单介绍一下这个网站：
     -   **`INDIE TOOLS`**: 专注分享独立开发出海**精选**、**高质量**工具。按**分类整理**，再也不用大海捞针找工具了！
-        ![](https://ims-oss.us.kg/other/indietools.png)
+        ![](/other/b70dae61-3a2a-41a7-b719-ee852030192f/indietools.png)
 -   使用基础栈：`React 19 + Next 15 + Bun` `搭建的，也正好体验一下更新的三个技术栈，整体下来还不错，React` 项目启动速度终于有改观了。
 -   虽然还是有一些小坑，但是结果是好的。这个网站我还在不断完善中，以后会加入更多功能，实用工具的！敬请期待！😉
 -   如果有更好的建议和想法，欢迎`进群反馈`！👇
-    ![](https://ims-oss.us.kg/other/indietools-group.jpg)
+    ![](/other/b70dae61-3a2a-41a7-b719-ee852030192f/indietools-group.jpg)
 
 ### 项目三：[倒计时](https://countdown.us.kg)
 
@@ -42,7 +42,7 @@
 -   正好快过年了，我就用 `Bolt` 搞了个倒计时，方便大家过年倒数。
 -   注册登录，开搞，很快整好了，我就把它部署到 `vercel` 了！简直不要太爽！🥳
 -   虽然这个项目很简单，但它让我见识到了 `Bolt` 的强大，它可以通过简单的交流，一键生成完整的项目，并且代码质量也很高。👍
-    ![](https://ims-oss.us.kg/other/countdown.png)
+    ![](/other/b70dae61-3a2a-41a7-b719-ee852030192f/countdown.png)
 
 ## AI 编程
 
