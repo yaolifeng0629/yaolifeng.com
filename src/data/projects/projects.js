@@ -5,7 +5,7 @@ export const Projects = [
         link: 'https://github.com/cuixueshe/earthworm',
         author: 'cuixueshe',
         author_link: 'https://github.com/cuixiaorui',
-        avatar: 'https://ims-oss.us.kg/projects/julebu.webp',
+        avatar: '/projects/julebu.webp',
         home_link: 'https://julebu.co',
     },
     {
@@ -24,7 +24,7 @@ export const Projects = [
         link: 'https://github.com/yaolifeng0629/yaolifeng.com',
         author: 'yaolifeng0629',
         author_link: 'https://github.com/yaolifeng0629',
-        avatar: 'https://ims-oss.us.kg/projects/Immerse-light.webp',
+        avatar: '/projects/Immerse-light.webp',
         home_link: 'https://yaolifeng.com',
     },
     {
@@ -52,7 +52,7 @@ export const Projects = [
         link: 'https://github.com/yaolifeng0629/del-repos',
         author: 'yaolifeng0629',
         author_link: 'https://github.com/yaolifeng0629',
-        avatar: 'https://ims-oss.us.kg/projects/del-repos.webp',
+        avatar: '/projects/del-repos.webp',
         home_link: 'https://www.npmjs.com/package/del-repos',
     },
     {
@@ -90,7 +90,7 @@ export const Projects = [
         link: 'https://github.com/yaolifeng0629/countdown',
         author: 'yaolifeng0629',
         author_link: 'https://github.com/yaolifeng0629',
-        avatar: 'https://ims-oss.us.kg/projects/favicon-countdown.png',
+        avatar: '/projects/favicon-countdown.png',
         home_link: 'https://countdown.us.kg',
     },
 ];
