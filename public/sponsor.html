@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Support my open source work and content creation. Frontend developer, indie maker, and open source contributor.">
+    <meta name="keywords" content="sponsor, open source, frontend development, indie developer, tech blog">
+    <meta name="author" content="Lifeng Yao">
+    <meta property="og:title" content="Support My Work - Lifeng Yao">
+    <meta property="og:description" content="Support my open source work and content creation. Frontend developer, indie maker, and open source contributor.">
+    <meta property="og:image" content="https://yaolifeng.com/sponsor/avatar.webp">
+    <meta property="og:url" content="https://yaolifeng.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Support My Work - Lifeng Yao</title>
+    <link rel="icon" href="https://yaolifeng.com/sponsor/avatar.webp" type="image/webp">
+    <link rel="shortcut icon" href="https://yaolifeng.com/sponsor/avatar.webp" type="image/webp">
+    <!-- Preload critical assets -->
+    <link rel="preload" href="https://yaolifeng.com/sponsor/avatar.webp" as="image">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- Load Font Awesome asynchronously -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </noscript>
+    <style>
+        /* Define critical CSS inline */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #3b82f6;
+            --accent-color: #fbbf24;
+            --text-primary: #1f2937;
+            --text-secondary: #4b5563;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f3f4f6;
+            --transition: all 0.3s ease;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #1a202c;
+                --bg-secondary: #2d3748;
+                --text-primary: #f7fafc;
+                --text-secondary: #a0aec0;
+            }
+        }
+
+        /* Critical styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Lazy load images */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            loading: lazy;
+        }
+
+        /* Rest of your existing styles... */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background: var(--bg-primary);
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: block;
+            border: 3px solid var(--accent-color);
+            object-fit: cover;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .wechat-account {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .wechat-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .wechat-link:hover {
+            opacity: 0.8;
+        }
+
+        .social-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--text-secondary);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-item:hover {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .social-item i {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-item img {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .social-item:hover img {
+            transform: translateY(-2px);
+        }
+
+        .social-item span {
+            font-size: 0.9rem;
+        }
+
+        .tags {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: var(--bg-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .sponsor-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem auto 2rem;
+            max-width: 1000px;
+            padding: 0 1rem;
+        }
+
+        .sponsor-card {
+            background: var(--bg-primary);
+            border-radius: 1rem;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .sponsor-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .sponsor-icon.wechat {
+            color: #07C160;
+        }
+
+        .sponsor-icon.alipay {
+            color: #1677FF;
+        }
+
+        .sponsor-icon.paypal {
+            color: #0070BA;
+        }
+
+        .sponsor-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .sponsor-card p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .qr-code {
+            max-width: 200px;
+            margin: 1rem auto;
+            border-radius: 0.5rem;
+            display: none;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .social-link {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            color: var(--primary-color);
+        }
+
+        .sponsor-message {
+            text-align: center;
+            color: var(--text-secondary);
+            margin: 2rem 0 4rem;
+            font-size: 1rem;
+            padding: 0 1rem;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem;
+            color: var(--text-secondary);
+        }
+
+        .lang-switch {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 100;
+            background: var(--bg-primary);
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .lang-switch:hover {
+            background: var(--bg-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .sponsor-options {
+                grid-template-columns: 1fr;
+            }
+
+            .title {
+                font-size: 2rem;
+            }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: var(--bg-primary);
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            text-align: center;
+            position: relative;
+            max-width: 90%;
+            width: 400px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .modal-content img {
+            max-width: 280px;
+            border-radius: 0.75rem;
+            margin: 1.5rem auto;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            transition: var(--transition);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-secondary);
+        }
+
+        .close-modal:hover {
+            background: var(--text-secondary);
+            color: var(--bg-primary);
+        }
+
+        #modal-title {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .modal-subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Lifeng Yao",
+        "url": "https://sponsor.yaolifeng.com",
+        "image": "https://yaolifeng.com/sponsor/avatar.webp",
+        "sameAs": [
+            "https://github.com/yaolifeng0629",
+            "https://x.com/Immerse_code",
+            "https://yaolifeng.com",
+            "https://indietools.work"
+        ],
+        "description": "Frontend developer, indie maker, and open source contributor"
+    }
+    </script>
+    <div class="lang-switch" onclick="switchLanguage()">中文</div>
+    <div class="container">
+        <header class="header">
+            <img src="https://yaolifeng.com/sponsor/avatar.webp" alt="Profile" class="profile-img">
+            <h1 class="title">Support My Work</h1>
+            <p class="subtitle">🚀 Frontend & Open Source | 🕵‍♂ Tools | 🧹 Code Perfectionist</p>
+            <p class="wechat-account">
+                ✍ Follow my WeChat Official Account
+                <a href="javascript:void(0)" onclick="showQR('wechat-account')" class="wechat-link"
+                    title="Non-Fungible Frontend Notes">【Non-Fungible Frontend Notes】</a>
+            </p>
+            <div class="social-info">
+                <a href="https://github.com/yaolifeng0629" class="social-item" target="_blank" title="Visit my GitHub">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://indietools.work" class="social-item" target="_blank" title="Tools for Indie Developers">
+                    <img src="https://indietools.work/favicon_dark.svg">
+                    <span>INDIE TOOLS</span>
+                </a>
+                <a href="https://yaolifeng.com" class="social-item" target="_blank" title="Visit my Website">
+                    <img src="https://yaolifeng.com/images/Immerse-dark.svg" width="30px" height="30px" />
+                    <span>Blog</span>
+                </a>
+                <a href="https://x.com/Immerse_code" class="social-item" target="_blank" title="Follow me on Twitter">
+                    <i class="fab fa-twitter" style="color: #1DA1F2;"></i>
+                    <span>Twitter</span>
+                </a>
+            </div>
+            <div class="tags">
+                <span class="tag">Frontend Dev</span>
+                <span class="tag">Indie Developer</span>
+                <span class="tag">Open Source</span>
+                <span class="tag">Tech Blogger</span>
+                <!-- <span class="tag">远程工作</span> -->
+            </div>
+        </header>
+
+        <div class="sponsor-options">
+            <div class="sponsor-card" onclick="showQR('wechat')" title="WeChat Pay">
+                <i class="fab fa-weixin sponsor-icon wechat"></i>
+                <h3 class="sponsor-title">WeChat Pay</h3>
+                <p>Support via WeChat Pay</p>
+            </div>
+
+            <div class="sponsor-card" onclick="showQR('alipay')" title="Alipay">
+                <i class="fab fa-alipay sponsor-icon alipay"></i>
+                <h3 class="sponsor-title">Alipay</h3>
+                <p>Support via Alipay</p>
+            </div>
+
+            <div class="sponsor-card" onclick="window.open('https://www.paypal.me/Immerse0629', '_blank')"
+                title="PayPal">
+                <i class="fab fa-paypal sponsor-icon paypal"></i>
+                <h3 class="sponsor-title">PayPal</h3>
+                <p>Support via PayPal</p>
+            </div>
+        </div>
+
+        <p class="sponsor-message">Thank you for your support! Your sponsorship helps me continue creating and maintaining open source projects.</p>
+
+        <footer class="footer">
+            <p></p>
+        </footer>
+    </div>
+
+    <div class="modal" id="qr-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()" title="Close">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p class="modal-subtitle" id="modal-subtitle"></p>
+            <img id="modal-qr" src="" alt="QR Code">
+        </div>
+    </div>
+
+    <script>
+        // Intersection Observer for lazy loading
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            images.forEach(img => imageObserver.observe(img));
+        });
+
+        const translations = {
+            en: {
+                title: 'Support My Work',
+                subtitle: '🚀 Frontend & Open Source | 🕵‍♂ Tools | 🧹 Code Perfectionist',
+                wechatAccount: '✍ Follow my WeChat Official Account',
+                wechatAccountName: 'Non-Fungible Frontend Notes',
+                github: 'Visit my GitHub',
+                indieTools: 'Tools for Indie Developers',
+                blog: 'Visit my Website',
+                twitter: 'Follow me on Twitter',
+                tags: {
+                    frontend: 'Frontend Dev',
+                    indie: 'Indie Developer',
+                    opensource: 'Open Source',
+                    blogger: 'Tech Blogger'
+                },
+                payment: {
+                    wechat: {
+                        title: 'WeChat Pay',
+                        subtitle: 'Support via WeChat Pay',
+                        modalTitle: 'WeChat Pay',
+                        modalSubtitle: 'Scan QR code with WeChat to support'
+                    },
+                    alipay: {
+                        title: 'Alipay',
+                        subtitle: 'Support via Alipay',
+                        modalTitle: 'Alipay',
+                        modalSubtitle: 'Scan QR code with Alipay to support'
+                    },
+                    paypal: {
+                        title: 'PayPal',
+                        subtitle: 'Support via PayPal'
+                    }
+                },
+                wechatModal: {
+                    title: 'Follow Official Account',
+                    subtitle: 'Scan QR code to follow "Non-Fungible Frontend Notes"'
+                },
+                supportMessage: 'Thank you for your support! Your sponsorship helps me continue creating and maintaining open source projects.',
+                close: 'Close'
+            },
+            zh: {
+                title: 'Support My Work',
+                subtitle: '🚀 前端 and 开源 | 🕵‍♂ 工具 | 🧹 代码强迫症患者',
+                wechatAccount: '✍ 笔耕不辍于微信公众号',
+                wechatAccountName: '非同质前端札记',
+                github: '访问我的 GitHub',
+                indieTools: '独立开发者出海必备工具站',
+                blog: '访问我的个人站点',
+                twitter: '在 Twitter 上关注我',
+                tags: {
+                    frontend: '前端开发',
+                    indie: '独立开发',
+                    opensource: '开源项目',
+                    blogger: '技术博主'
+                },
+                payment: {
+                    wechat: {
+                        title: '微信支付',
+                        subtitle: '使用微信扫码支持',
+                        modalTitle: '微信支付',
+                        modalSubtitle: '请使用微信扫描二维码进行赞助'
+                    },
+                    alipay: {
+                        title: '支付宝',
+                        subtitle: '使用支付宝扫码支持',
+                        modalTitle: '支付宝',
+                        modalSubtitle: '请使用支付宝扫描二维码进行赞助'
+                    },
+                    paypal: {
+                        title: 'PayPal',
+                        subtitle: '使用 PayPal 支持'
+                    }
+                },
+                wechatModal: {
+                    title: '关注公众号',
+                    subtitle: '扫描二维码，关注「非同质前端札记」'
+                },
+                supportMessage: '感谢您的支持！您的赞助将帮助我继续创作和维护开源项目。',
+                close: '关闭'
+            }
+        };
+
+        let currentLang = 'en';
+
+        function switchLanguage() {
+            currentLang = currentLang === 'en' ? 'zh' : 'en';
+            updateContent();
+        }
+
+        function updateContent() {
+            const t = translations[currentLang];
+
+            // Update main content
+            document.querySelector('.title').textContent = t.title;
+            document.querySelector('.subtitle').textContent = t.subtitle;
+            document.querySelector('.wechat-account').innerHTML = `${t.wechatAccount} <a href="javascript:void(0)" onclick="showQR('wechat-account')" class="wechat-link" title="${t.wechatAccountName}">${t.wechatAccountName}</a>`;
+
+            // Update social links
+            document.querySelectorAll('.social-item').forEach(item => {
+                if (item.href.includes('github')) {
+                    item.title = t.github;
+                } else if (item.href.includes('indietools')) {
+                    item.title = t.indieTools;
+                } else if (item.href.includes('yaolifeng')) {
+                    item.title = t.blog;
+                } else if (item.href.includes('x.com')) {
+                    item.title = t.twitter;
+                }
+            });
+
+            // Update tags
+            const tags = document.querySelectorAll('.tag');
+            tags[0].textContent = t.tags.frontend;
+            tags[1].textContent = t.tags.indie;
+            tags[2].textContent = t.tags.opensource;
+            tags[3].textContent = t.tags.blogger;
+
+            // Update payment cards
+            const cards = document.querySelectorAll('.sponsor-card');
+            cards[0].querySelector('.sponsor-title').textContent = t.payment.wechat.title;
+            cards[0].querySelector('p').textContent = t.payment.wechat.subtitle;
+            cards[1].querySelector('.sponsor-title').textContent = t.payment.alipay.title;
+            cards[1].querySelector('p').textContent = t.payment.alipay.subtitle;
+            cards[2].querySelector('.sponsor-title').textContent = t.payment.paypal.title;
+            cards[2].querySelector('p').textContent = t.payment.paypal.subtitle;
+
+            // Update support message
+            document.querySelector('.sponsor-message').textContent = t.supportMessage;
+
+            // Update close button title
+            document.querySelector('.close-modal').title = t.close;
+
+            // Update language switch button
+            document.querySelector('.lang-switch').textContent = currentLang === 'en' ? '中文' : 'English';
+        }
+
+        function showQR(type) {
+            const modal = document.getElementById('qr-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalSubtitle = document.getElementById('modal-subtitle');
+            const modalQR = document.getElementById('modal-qr');
+            const t = translations[currentLang];
+
+            if (type === 'wechat') {
+                modalTitle.textContent = t.payment.wechat.modalTitle;
+                modalSubtitle.textContent = t.payment.wechat.modalSubtitle;
+                modalQR.src = 'https://yaolifeng.com/sponsor/weixin.png';
+            } else if (type === 'alipay') {
+                modalTitle.textContent = t.payment.alipay.modalTitle;
+                modalSubtitle.textContent = t.payment.alipay.modalSubtitle;
+                modalQR.src = 'https://yaolifeng.com/sponsor/ali.png';
+            } else if (type === 'wechat-account') {
+                modalTitle.textContent = t.wechatModal.title;
+                modalSubtitle.textContent = t.wechatModal.subtitle;
+                modalQR.src = 'https://yaolifeng.com/sponsor/wx_public_account.jpg';
+            }
+
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('qr-modal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function (event) {
+            const modal = document.getElementById('qr-modal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>
