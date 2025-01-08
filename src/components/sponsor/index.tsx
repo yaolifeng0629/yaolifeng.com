@@ -9,7 +9,7 @@ type Props = {
 const Sponsor = ({ className }: Props) => {
     return (
         <Link
-            href="https://ims-oss.us.kg/html/simple.html"
+            href="https://yaolifeng.com/sponsor.html"
             target='_blank'
             className="text-muted-foreground hover:text-foreground"
             title='Sponsor'
