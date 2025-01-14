@@ -9,11 +9,11 @@ export function SearchButton() {
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const { blogs } = useBlogs();
 
-  const filteredBlogs = useMemo(() => {
+  const searchResults = useMemo(() => {
     if (!searchQuery && !selectedTag) return undefined;
 
     return blogs.filter(blog => {
-      const matchesSearch = searchQuery === '' || 
+      const matchesSearch = !searchQuery || 
         blog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         blog.description.toLowerCase().includes(searchQuery.toLowerCase());
 
@@ -28,7 +28,7 @@ export function SearchButton() {
   };
 
   const handleTagSelect = (tag: string) => {
-    setSelectedTag(tag || null);
+    setSelectedTag(tag === selectedTag ? null : tag);
   };
 
   return (
@@ -36,7 +36,8 @@ export function SearchButton() {
       onSearch={handleSearch}
       onTagSelect={handleTagSelect}
       selectedTag={selectedTag}
-      searchResults={filteredBlogs}
+      searchResults={searchResults}
+      searchQuery={searchQuery}
     />
   );
 }

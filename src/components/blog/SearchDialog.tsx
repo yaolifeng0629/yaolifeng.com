@@ -29,23 +29,22 @@ interface SearchDialogProps {
   onTagSelect: (tag: string) => void;
   selectedTag: string | null;
   searchResults?: Blog[];
+  searchQuery: string;
 }
 
-export function SearchDialog({ 
-  onSearch, 
-  onTagSelect, 
-  selectedTag, 
-  searchResults = [] 
+export function SearchDialog({
+  onSearch,
+  onTagSelect,
+  selectedTag,
+  searchResults,
+  searchQuery
 }: SearchDialogProps) {
-  const [searchQuery, setSearchQuery] = useState('');
   const [showAllCategories, setShowAllCategories] = useState(false);
-  const displayedCategories = showAllCategories ? tagCategories : tagCategories.slice(0, 3);
   const [isOpen, setIsOpen] = useState(false);
+  const displayedCategories = showAllCategories ? tagCategories : tagCategories.slice(0, 3);
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const query = e.target.value;
-    setSearchQuery(query);
-    onSearch(query);
+    onSearch(e.target.value);
   };
 
   return (
@@ -82,59 +81,46 @@ export function SearchDialog({
           <div className="flex gap-6 h-[400px]">
             {/* 左侧标签区域 */}
             <div className="w-[200px] shrink-0 border-r pr-3">
-              <div className="space-y-3">
-                <Button
-                  onClick={() => onTagSelect('')}
-                  variant="ghost"
-                  size="sm"
-                  className={`w-full justify-start text-xs font-normal ${
-                    !selectedTag ? 'bg-primary/10 text-primary hover:bg-primary/20' : ''
-                  }`}
-                >
-                  全部
-                </Button>
-
-                <ScrollArea className="h-[340px]">
-                  <div className="space-y-4 pr-2">
-                    {displayedCategories.map((category) => (
-                      <div key={category.name} className="space-y-1.5">
-                        <h4 className="text-[11px] font-medium text-muted-foreground">
-                          {category.name}
-                        </h4>
-                        <div className="space-y-0.5">
-                          {category.tags.map((tag) => (
-                            <Button
-                              key={tag}
-                              onClick={() => onTagSelect(tag)}
-                              variant="ghost"
-                              size="sm"
-                              className={`w-full h-6 justify-start text-xs font-normal ${
-                                selectedTag === tag
-                                  ? 'bg-primary/10 text-primary hover:bg-primary/20'
-                                  : 'hover:bg-muted'
-                              }`}
-                            >
-                              {tag}
-                            </Button>
-                          ))}
-                        </div>
+              <ScrollArea className="h-full pr-4">
+                <div className="space-y-6">
+                  {displayedCategories.map((category) => (
+                    <div key={category.name} className="space-y-2">
+                      <h4 className="text-[11px] font-medium text-muted-foreground/80 uppercase tracking-wider">
+                        {category.name}
+                      </h4>
+                      <div className="space-y-1">
+                        {category.tags.map((tag) => (
+                          <Button
+                            key={tag}
+                            onClick={() => onTagSelect(tag)}
+                            variant="ghost"
+                            size="sm"
+                            className={`w-full h-7 justify-start text-xs font-normal ${
+                              selectedTag === tag
+                                ? 'bg-primary/10 text-primary hover:bg-primary/20'
+                                : 'hover:bg-muted'
+                            }`}
+                          >
+                            {tag}
+                          </Button>
+                        ))}
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
 
                   {!showAllCategories && tagCategories.length > 3 && (
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="w-full h-7 mt-2 text-xs text-muted-foreground hover:text-foreground"
+                      className="w-full h-7 mt-4 text-xs text-muted-foreground/70 hover:text-foreground"
                       onClick={() => setShowAllCategories(true)}
                     >
                       更多分类
                       <ChevronDown className="h-3 w-3 ml-1" />
                     </Button>
                   )}
-                </ScrollArea>
-              </div>
+                </div>
+              </ScrollArea>
             </div>
 
             {/* 右侧搜索结果列表 */}
@@ -144,7 +130,7 @@ export function SearchDialog({
                   <h3 className="mb-3 text-sm font-medium text-gray-700 dark:text-gray-300">
                     搜索结果 ({searchResults.length})
                   </h3>
-                  <ScrollArea className="h-[340px]">
+                  <ScrollArea className="h-full">
                     <div className="space-y-4 pr-4">
                       {searchResults.length > 0 ? (
                         searchResults.map((blog) => (
@@ -166,13 +152,17 @@ export function SearchDialog({
                             <div className="flex items-center gap-4 mt-2 text-xs text-muted-foreground">
                               <div className="flex items-center gap-1">
                                 <Calendar className="h-3 w-3" />
-                                {new Date(blog.date).toLocaleDateString('zh-CN')}
+                                {new Date(blog.date).toLocaleDateString('zh-CN', {
+                                  year: 'numeric',
+                                  month: '2-digit',
+                                  day: '2-digit'
+                                })}
                               </div>
-                              <div className="flex gap-1">
+                              <div className="flex flex-wrap gap-1.5">
                                 {blog.tags.map((tag) => (
                                   <span
                                     key={tag}
-                                    className="px-2 py-0.5 rounded-full bg-muted"
+                                    className="inline-flex items-center rounded-md bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground ring-1 ring-inset ring-muted-foreground/10"
                                   >
                                     {tag}
                                   </span>
@@ -191,7 +181,7 @@ export function SearchDialog({
                   </ScrollArea>
                 </>
               ) : (
-                <div className="flex flex-col items-center justify-center h-[340px] text-muted-foreground">
+                <div className="flex flex-col items-center justify-center h-full text-muted-foreground">
                   <Search className="h-12 w-12 mb-2 stroke-[1.5]" />
                   <p className="text-sm">输入关键词开始搜索</p>
                 </div>
