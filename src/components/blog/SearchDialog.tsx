@@ -15,6 +15,7 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 interface Blog {
   title: string;
@@ -41,10 +42,17 @@ export function SearchDialog({
 }: SearchDialogProps) {
   const [showAllCategories, setShowAllCategories] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
   const displayedCategories = showAllCategories ? tagCategories : tagCategories.slice(0, 3);
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     onSearch(e.target.value);
+  };
+
+  const handleBlogClick = (slug: string) => {
+    setIsLoading(true);
+    router.push(`/blog/${slug}`);
   };
 
   return (
@@ -130,46 +138,47 @@ export function SearchDialog({
                   <h3 className="mb-3 text-sm font-medium text-gray-700 dark:text-gray-300">
                     搜索结果 ({searchResults.length})
                   </h3>
-                  <ScrollArea className="h-full">
+                  <ScrollArea className="h-[360px]">
                     <div className="space-y-4 pr-4">
                       {searchResults.length > 0 ? (
                         searchResults.map((blog) => (
-                          <Link
+                          <div
                             key={blog.slug}
-                            href={`/blog/${blog.slug}`}
-                            onClick={() => setIsOpen(false)}
-                            className="block p-3 rounded-lg border hover:bg-muted/50 transition-colors group"
+                            className="group rounded-lg border p-4 hover:border-primary/50 transition-colors"
                           >
-                            <div className="flex items-start justify-between gap-2">
+                            <Link
+                              href={`/blog/${blog.slug}`}
+                              onClick={() => handleBlogClick(blog.slug)}
+                              className="block"
+                            >
                               <h4 className="font-medium group-hover:text-primary transition-colors">
                                 {blog.title}
                               </h4>
-                              <ArrowUpRight className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-                            </div>
-                            <div className="mt-1 line-clamp-2 text-sm text-muted-foreground">
-                              {blog.description}
-                            </div>
-                            <div className="flex items-center gap-4 mt-2 text-xs text-muted-foreground">
-                              <div className="flex items-center gap-1">
-                                <Calendar className="h-3 w-3" />
-                                {new Date(blog.date).toLocaleDateString('zh-CN', {
-                                  year: 'numeric',
-                                  month: '2-digit',
-                                  day: '2-digit'
-                                })}
+                              <p className="mt-1 text-sm text-muted-foreground line-clamp-2">
+                                {blog.description}
+                              </p>
+                              <div className="flex items-center gap-4 mt-2 text-xs text-muted-foreground">
+                                <div className="flex items-center gap-1">
+                                  <Calendar className="h-3 w-3" />
+                                  {new Date(blog.date).toLocaleDateString('zh-CN', {
+                                    year: 'numeric',
+                                    month: '2-digit',
+                                    day: '2-digit'
+                                  })}
+                                </div>
+                                <div className="flex flex-wrap gap-1.5">
+                                  {blog.tags.map((tag) => (
+                                    <span
+                                      key={tag}
+                                      className="inline-flex items-center rounded-md bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground ring-1 ring-inset ring-muted-foreground/10"
+                                    >
+                                      {tag}
+                                    </span>
+                                  ))}
+                                </div>
                               </div>
-                              <div className="flex flex-wrap gap-1.5">
-                                {blog.tags.map((tag) => (
-                                  <span
-                                    key={tag}
-                                    className="inline-flex items-center rounded-md bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground ring-1 ring-inset ring-muted-foreground/10"
-                                  >
-                                    {tag}
-                                  </span>
-                                ))}
-                              </div>
-                            </div>
-                          </Link>
+                            </Link>
+                          </div>
                         ))
                       ) : (
                         <div className="flex flex-col items-center justify-center h-[200px] text-muted-foreground">
@@ -181,9 +190,18 @@ export function SearchDialog({
                   </ScrollArea>
                 </>
               ) : (
-                <div className="flex flex-col items-center justify-center h-full text-muted-foreground">
-                  <Search className="h-12 w-12 mb-2 stroke-[1.5]" />
-                  <p className="text-sm">输入关键词开始搜索</p>
+                <div className="flex flex-col items-center justify-center h-[360px] text-muted-foreground">
+                  {isLoading ? (
+                    <div className="flex flex-col items-center gap-2">
+                      <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-r-transparent" />
+                      <p className="text-sm">加载中...</p>
+                    </div>
+                  ) : (
+                    <>
+                      <Search className="h-12 w-12 mb-2 stroke-[1.5]" />
+                      <p className="text-sm">输入关键词开始搜索</p>
+                    </>
+                  )}
                 </div>
               )}
             </div>
