@@ -87,8 +87,8 @@ export function SearchDialog({
           </div>
 
           <div className="flex gap-6 h-[400px]">
-            {/* 左侧标签区域 */}
-            <div className="w-[200px] shrink-0 border-r pr-3">
+            {/* 左侧标签区域 - 在移动端隐藏 */}
+            <div className="hidden md:block w-[200px] shrink-0 border-r pr-3">
               <ScrollArea className="h-full pr-4">
                 <div className="space-y-6">
                   {displayedCategories.map((category) => (
@@ -131,8 +131,8 @@ export function SearchDialog({
               </ScrollArea>
             </div>
 
-            {/* 右侧搜索结果列表 */}
-            <div className="flex-1 overflow-hidden">
+            {/* 右侧搜索结果 - 移动端下占满宽度 */}
+            <div className="flex-1">
               {searchResults ? (
                 <>
                   <h3 className="mb-3 text-sm font-medium text-gray-700 dark:text-gray-300">
