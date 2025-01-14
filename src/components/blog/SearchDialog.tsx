@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import * as Tags from '@/constants/tag';
 import { tagCategories } from '@/constants/tagCategories';
-import { Search, ChevronDown, Calendar } from 'lucide-react';
+import { Search, ChevronDown, Calendar, ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -14,17 +14,33 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import Link from 'next/link';
+
+interface Blog {
+  title: string;
+  date: string;
+  tags: string[];
+  slug: string;
+  description: string;
+}
 
 interface SearchDialogProps {
   onSearch: (query: string) => void;
   onTagSelect: (tag: string) => void;
   selectedTag: string | null;
+  searchResults?: Blog[];
 }
 
-export function SearchDialog({ onSearch, onTagSelect, selectedTag }: SearchDialogProps) {
+export function SearchDialog({ 
+  onSearch, 
+  onTagSelect, 
+  selectedTag, 
+  searchResults = [] 
+}: SearchDialogProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [showAllCategories, setShowAllCategories] = useState(false);
   const displayedCategories = showAllCategories ? tagCategories : tagCategories.slice(0, 3);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value;
@@ -32,22 +48,8 @@ export function SearchDialog({ onSearch, onTagSelect, selectedTag }: SearchDialo
     onSearch(query);
   };
 
-  // 模拟的搜索结果数据，实际使用时替换为真实数据
-  const searchResults = [
-    {
-      title: '深入剖析 React 表单的两种控制方式，让你的状态更高效',
-      date: '2024-01-14',
-      tags: ['React', 'JavaScript'],
-    },
-    {
-      title: 'VS Code 代码片段指南：从基础到高级技巧',
-      date: '2024-01-13',
-      tags: ['VS Code', '效率工具'],
-    },
-  ];
-
   return (
-    <Dialog>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         <Button
           variant="outline"
@@ -83,7 +85,7 @@ export function SearchDialog({ onSearch, onTagSelect, selectedTag }: SearchDialo
               <div className="space-y-3">
                 <Button
                   onClick={() => onTagSelect('')}
-                  variant={!selectedTag ? 'default' : 'outline'}
+                  variant="ghost"
                   size="sm"
                   className={`w-full justify-start text-xs font-normal ${
                     !selectedTag ? 'bg-primary/10 text-primary hover:bg-primary/20' : ''
@@ -137,35 +139,63 @@ export function SearchDialog({ onSearch, onTagSelect, selectedTag }: SearchDialo
 
             {/* 右侧搜索结果列表 */}
             <div className="flex-1 overflow-hidden">
-              <h3 className="mb-3 text-sm font-medium text-gray-700 dark:text-gray-300">搜索结果</h3>
-              <ScrollArea className="h-[320px]">
-                <div className="space-y-4">
-                  {searchResults.map((result, index) => (
-                    <div
-                      key={index}
-                      className="p-3 rounded-lg border hover:bg-muted/50 transition-colors cursor-pointer"
-                    >
-                      <h4 className="font-medium mb-2">{result.title}</h4>
-                      <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                        <div className="flex items-center gap-1">
-                          <Calendar className="h-3 w-3" />
-                          {result.date}
+              {searchResults ? (
+                <>
+                  <h3 className="mb-3 text-sm font-medium text-gray-700 dark:text-gray-300">
+                    搜索结果 ({searchResults.length})
+                  </h3>
+                  <ScrollArea className="h-[340px]">
+                    <div className="space-y-4 pr-4">
+                      {searchResults.length > 0 ? (
+                        searchResults.map((blog) => (
+                          <Link
+                            key={blog.slug}
+                            href={`/blog/${blog.slug}`}
+                            onClick={() => setIsOpen(false)}
+                            className="block p-3 rounded-lg border hover:bg-muted/50 transition-colors group"
+                          >
+                            <div className="flex items-start justify-between gap-2">
+                              <h4 className="font-medium group-hover:text-primary transition-colors">
+                                {blog.title}
+                              </h4>
+                              <ArrowUpRight className="h-4 w-4 text-muted-foreground flex-shrink-0" />
+                            </div>
+                            <div className="mt-1 line-clamp-2 text-sm text-muted-foreground">
+                              {blog.description}
+                            </div>
+                            <div className="flex items-center gap-4 mt-2 text-xs text-muted-foreground">
+                              <div className="flex items-center gap-1">
+                                <Calendar className="h-3 w-3" />
+                                {new Date(blog.date).toLocaleDateString('zh-CN')}
+                              </div>
+                              <div className="flex gap-1">
+                                {blog.tags.map((tag) => (
+                                  <span
+                                    key={tag}
+                                    className="px-2 py-0.5 rounded-full bg-muted"
+                                  >
+                                    {tag}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          </Link>
+                        ))
+                      ) : (
+                        <div className="flex flex-col items-center justify-center h-[200px] text-muted-foreground">
+                          <Search className="h-12 w-12 mb-2 stroke-[1.5]" />
+                          <p className="text-sm">未找到相关文章</p>
                         </div>
-                        <div className="flex gap-1">
-                          {result.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="px-2 py-0.5 rounded-full bg-muted"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
+                      )}
                     </div>
-                  ))}
+                  </ScrollArea>
+                </>
+              ) : (
+                <div className="flex flex-col items-center justify-center h-[340px] text-muted-foreground">
+                  <Search className="h-12 w-12 mb-2 stroke-[1.5]" />
+                  <p className="text-sm">输入关键词开始搜索</p>
                 </div>
-              </ScrollArea>
+              )}
             </div>
           </div>
         </div>
