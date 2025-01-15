@@ -1,3 +1,5 @@
+'use client';
+
 import type { Metadata } from 'next';
 
 import { Console } from '@/components/console';
@@ -10,7 +12,7 @@ import { ReactHotToaster } from '@/components/ui/toast';
 
 import '@/styles/global.css';
 
-export const metadata: Metadata = {
+const metadata = {
     title: '姚利锋',
     description: '姚利锋',
 };
@@ -23,6 +25,8 @@ export default function RootLayout({
     return (
         <html lang="zh-CN" suppressHydrationWarning>
             <head>
+                <title>{metadata.title}</title>
+                <meta name="description" content={metadata.description} />
                 <Favicon />
             </head>
             <body>
