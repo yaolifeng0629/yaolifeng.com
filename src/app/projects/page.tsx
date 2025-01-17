@@ -1,13 +1,13 @@
 import { NextPage } from 'next'
 import ProjectItem from '@/components/projects/project-item'
 import { Projects } from '@/data/projects/projects'
-import type { Metadata } from 'next'
+// import type { Metadata } from 'next'
 import { Wrapper } from '@/components/wrapper'
 
-export const metadata: Metadata = {
-    title: '姚利锋 | 项目',
-    description: '姚利锋 | 项目'
-}
+// export const metadata: Metadata = {
+//     title: '姚利锋 | 项目',
+//     description: '姚利锋 | 项目'
+// }
 
 const Page: NextPage = () => {
     return (
