@@ -1,11 +1,11 @@
 import { PATHS_MAP, PATHS } from '@/constants';
-import { Metadata } from 'next';
+// import { Metadata } from 'next';
 import { Wrapper } from '@/components/wrapper';
 
-export const metadata: Metadata = {
-    title: PATHS_MAP[PATHS.SITE_LINKS],
-    description: '友情链接，欢迎交换友链～'
-};
+// export const metadata: Metadata = {
+//     title: PATHS_MAP[PATHS.SITE_LINKS],
+//     description: '友情链接，欢迎交换友链～'
+// };
 
 interface FriendLink {
     name: string;

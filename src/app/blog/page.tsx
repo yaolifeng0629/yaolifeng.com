@@ -1,14 +1,14 @@
 import React from 'react';
-import type { Metadata } from 'next';
+// import type { Metadata } from 'next';
 import { Wrapper } from '@/components/wrapper';
 import { getBlogs } from '@/api/blogs';
 import { BlogListContainer } from '@/components/blog/BlogListContainer';
 import { SearchButton } from '@/components/blog/SearchButton';
 
-export const metadata: Metadata = {
-    title: '姚利锋 | 博客',
-    description: '姚利锋 | 博客',
-};
+// export const metadata: Metadata = {
+//     title: '姚利锋 | 博客',
+//     description: '姚利锋 | 博客',
+// };
 
 export const revalidate = 60;
 

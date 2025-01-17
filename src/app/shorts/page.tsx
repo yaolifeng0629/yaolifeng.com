@@ -6,12 +6,12 @@ import { Wrapper } from '@/components/wrapper';
 
 import { getShort, Short } from '@/api/shorts';
 
-import type { Metadata } from 'next';
+// import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-    title: '姚利锋 | 片段',
-    description: '姚利锋 | 片段'
-};
+// export const metadata: Metadata = {
+//     title: '姚利锋 | 片段',
+//     description: '姚利锋 | 片段'
+// };
 export const revalidate = 60;
 
 const Page: NextPage = async () => {
