@@ -22,6 +22,10 @@ export const navItems: Array<{
         link: PATHS.SITE_PROJECT
     },
     {
+        label: PATHS_MAP[PATHS.SITE_SERVICES],
+        link: PATHS.SITE_SERVICES
+    },
+    {
         label: PATHS_MAP[PATHS.SITE_ABOUT],
         link: PATHS.SITE_ABOUT
     },
@@ -29,5 +33,5 @@ export const navItems: Array<{
         label: PATHS_MAP[PATHS.SITE_LINKS],
         link: PATHS.SITE_LINKS,
         external: true // 标记为外部链接，不在主导航显示
-    },
+    }
 ];

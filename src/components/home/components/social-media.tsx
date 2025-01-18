@@ -6,12 +6,23 @@ import {
     IconLogoTwitter,
     IconLogoWeChat,
     IconLogoYoutube,
+    IconSkillGmail,
     IconSkillGmailDark,
     IconSkillGmailLight,
     IconsLogoGitee,
 } from '@/components/icons';
 
-import { BILIBILI_PAGE,WECHAT, EMAIL, GITEE, GITHUB_PAGE, JUEJIN_PAGE, TWITTER, WEIXIN_OFFICIAL, YOUTUBE } from '@/constants';
+import {
+    BILIBILI_PAGE,
+    EMAIL,
+    GITEE,
+    GITHUB_PAGE,
+    JUEJIN_PAGE,
+    TWITTER,
+    WECHAT,
+    WEIXIN_OFFICIAL,
+    YOUTUBE,
+} from '@/constants';
 
 const socialMediaList: Array<{
     icon: React.ReactNode;
@@ -49,12 +60,13 @@ const socialMediaList: Array<{
         link: TWITTER,
     },
     {
-        icon: (
-            <>
-                <IconSkillGmailDark className="text-2xl dark:hidden" />
-                <IconSkillGmailLight className="hidden text-2xl dark:inline-block" />
-            </>
-        ),
+        // icon: (
+        //     <>
+        //         <IconSkillGmailDark className="hidden text-2xl dark:inline-block" />
+        //         <IconSkillGmailLight className="text-2xl dark:hidden" />
+        //     </>
+        // ),
+        icon: <IconSkillGmail className="text-2xl" />,
         label: 'Gmail(yaolifeng666@gmail.com)',
         link: `mailto:${EMAIL}`,
     },
