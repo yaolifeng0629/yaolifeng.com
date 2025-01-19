@@ -51,6 +51,17 @@ import {
 
 export default [
     {
+        id: '1e0dcf10-ab42-44b2-b0a2-43ff344575d9',
+        url: '',
+        slug: '2025_start_my_body_taught_me_a_lesson',
+        createdAt: 1737249860893,
+        title: '2025开局，我的身体给我上了一课',
+        description:
+            '2025年伊始，作者因身体问题经历了一次健康危机，意识到长期忽视身体健康对工作和生活的影响。通过这次经历，作者反思了前端开发者在高压工作环境下容易忽视的健康问题，强调了平衡工作与健康的重要性，并分享了一些实用的健康管理建议，如合理作息、定期锻炼和饮食调整，以帮助同行在追求职业发展的同时保持身心健康。',
+        tags: [],
+        content: '/blogs/2025/2025开局，我的身体给我上了一课.md',
+    },
+    {
         id: 'b70dae61-3a2a-41a7-b719-ee852030192f',
         slug: 'vanished_month_ai_projects_amazing',
         createdAt: 1735461621647,
