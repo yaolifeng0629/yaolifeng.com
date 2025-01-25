@@ -10,9 +10,7 @@
         "start": "next start -p 3001",
         "test": "vitest run",
         "format": "prettier --write --cache .",
-        "postbuild": "next-sitemap --config next-sitemap.config.cjs",
-        "format-check": "prettier --check --cache .",
-        "parse:md": "node src/scripts/parseMarkdown.js"
+        "format-check": "prettier --check --cache ."
     },
     "dependencies": {
         "@bytemd/plugin-breaks": "^1.21.0",
