@@ -37,6 +37,11 @@ const services = [
                 link: 'https://fireflycard.shushiai.com/?invitationCode=N94YYR6E',
                 code: '7折优惠码：YFDASI',
             },
+            {
+                name: 'httpsok—SSL证书自动续期',
+                link: 'https://httpsok.com/p/4M2d',
+                code: '8.2折优惠码：V4BWENTD',
+            },
         ],
     },
     {
