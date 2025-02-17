@@ -16,8 +16,8 @@ import '@/styles/global.css';
 export const metadata: Metadata = {
     title: '姚利锋',
     description:
-        '欢迎来到姚利锋的个人网站 yaolifeng.com，这里分享我的前端开发、技术思考与学习心得。我热爱开源 (Github: github.com/yaolifeng0629)，并探索各种实用工具，我的独立开发工具站 www.indietools.work。我也热衷远程工作，欢迎关注微信公众号【非同质前端札记】',
-    keywords: ['非同质前端札记', '开源', '沉浸式', 'yaolifeng0629', 'Immerse', 'INDIE TOOLS'],
+        '欢迎来到姚利锋的个人网站 yaolifeng.com，这里分享我的前端开发、技术思考与学习心得。我热爱开源 (Github: github.com/yaolifeng0629)，并探索各种实用工具，我的独立开发工具站 www.indietools.work。我也热衷远程工作，欢迎关注微信公众号【沉浸式趣谈】',
+    keywords: ['沉浸式趣谈', '开源', '沉浸式', 'yaolifeng0629', 'Immerse', 'INDIE TOOLS'],
     metadataBase: new URL('https://yaolifeng.com'),
     alternates: {
         canonical: '/',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: '姚利锋',
         description:
-            '欢迎来到姚利锋的个人网站 yaolifeng.com，这里分享我的前端开发、技术思考与学习心得。我热爱开源 (Github: github.com/yaolifeng0629)，并探索各种实用工具，我的独立开发工具站 www.indietools.work。我也热衷远程工作，欢迎关注微信公众号【非同质前端札记】',
+            '欢迎来到姚利锋的个人网站 yaolifeng.com，这里分享我的前端开发、技术思考与学习心得。我热爱开源 (Github: github.com/yaolifeng0629)，并探索各种实用工具，我的独立开发工具站 www.indietools.work。我也热衷远程工作，欢迎关注微信公众号【沉浸式趣谈】',
         url: 'https://yaolifeng.com',
         siteName: '姚利锋',
         locale: 'en_US',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
         site: '@Immerse_code',
         title: '姚利锋',
         description:
-            '欢迎来到姚利锋的个人网站 yaolifeng.com，这里分享我的前端开发、技术思考与学习心得。我热爱开源 (Github: github.com/yaolifeng0629)，并探索各种实用工具，我的独立开发工具站 www.indietools.work。我也热衷远程工作，欢迎关注微信公众号【非同质前端札记】',
+            '欢迎来到姚利锋的个人网站 yaolifeng.com，这里分享我的前端开发、技术思考与学习心得。我热爱开源 (Github: github.com/yaolifeng0629)，并探索各种实用工具，我的独立开发工具站 www.indietools.work。我也热衷远程工作，欢迎关注微信公众号【沉浸式趣谈】',
         images: ['/images/Immerse-dark.svg'],
     },
     robots: {
