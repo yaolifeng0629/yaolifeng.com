@@ -46,7 +46,7 @@ const socialMediaList: Array<{
     // },
     {
         icon: <IconLogoOfficialAccount className="text-2xl" />,
-        label: '微信公众号(非同质前端札记)',
+        label: '微信公众号(沉浸式趣谈)',
         link: WEIXIN_OFFICIAL,
     },
     // {
