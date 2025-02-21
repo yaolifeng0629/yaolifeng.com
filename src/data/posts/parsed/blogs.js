@@ -51,6 +51,28 @@ import {
 
 export default [
     {
+        id: '85c78de5-f73c-44ed-82d1-6e495e98b7c1',
+        url: '',
+        slug: 'product_ideas_from_your_questions_inspiration_steps',
+        createdAt: 1740182129000,
+        title: '从日常吐槽到爆款产品，我是这样做的',
+        description:
+            '产品的创意往往源于对用户问题的深入理解和洞察。通过分析用户需求、痛点和使用场景，可以激发灵感并形成创新解决方案。具体步骤包括：收集用户反馈、识别核心问题、头脑风暴创意、筛选可行性方案、快速原型验证和迭代优化。关键在于将用户问题转化为产品价值，并通过系统化方法实现从灵感到落地的全过程。',
+        tags: [DESIGN_PATTERNS, UI_UX, ALGORITHMS, DATA_STRUCTURES, FRAMEWORKS],
+        content: '/blogs/2025/从日常吐槽到爆款产品，我是这样做的.md',
+    },
+    {
+        id: '4373f75e-819d-489e-b01e-6d1427f5704f',
+        url: '',
+        slug: 'latest_11x_speed_boost_no_more_deepseek_lag',
+        createdAt: 1740026110476,
+        title: '最新！告别DeepSeek卡顿，直接提速11倍多',
+        description:
+            '通过优化前端性能，解决了DeepSeek卡顿问题，实现了11倍以上的速度提升。文章详细介绍了具体的优化策略，包括代码压缩、资源加载优化、缓存机制改进等，帮助开发者显著提升网页响应速度和用户体验。',
+        tags: [PERFORMANCE, WEBPACK, VITE, BUILD_TOOLS, FRAMEWORKS],
+        content: '/blogs/2025/最新！告别DeepSeek卡顿，直接提速11倍多.md',
+    },
+    {
         id: '505a2040-4c99-4cb8-ae6b-5b6761231824',
         url: '',
         slug: 'local_image_preview_trick_revealed',
