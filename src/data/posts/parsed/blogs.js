@@ -51,6 +51,17 @@ import {
 
 export default [
     {
+        id: 'ff043d5a-3a3e-4113-b110-dd879009214d',
+        url: '',
+        slug: 'master_this_api_boost_web_display_10x',
+        createdAt: 1740319374485,
+        title: '掌握这个API，让你的网页展示效果提升10倍',
+        description:
+            '通过深入解析某个关键API的使用方法和优化技巧，帮助开发者显著提升网页的展示效果。内容涵盖API的核心功能、实际应用场景、性能优化策略以及常见问题的解决方案，旨在通过高效利用API实现更流畅的动画、更快的加载速度和更丰富的交互体验，从而让网页在视觉效果和用户体验上达到质的飞跃。',
+        tags: [JAVASCRIPT, BROWSER_APIS, PERFORMANCE, ANIMATION, UI_UX],
+        content: '/blogs/2025/掌握这个API，让你的网页展示效果提升10倍.md',
+    },
+    {
         id: '85c78de5-f73c-44ed-82d1-6e495e98b7c1',
         url: '',
         slug: 'product_ideas_from_your_questions_inspiration_steps',
