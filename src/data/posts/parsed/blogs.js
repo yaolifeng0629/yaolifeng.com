@@ -51,6 +51,17 @@ import {
 
 export default [
     {
+        id: '8d3129c8-d477-4453-996d-3a7823f8c363',
+        url: '',
+        slug: 'claude_3.7_vs_deepseek_vs_gpt-4o_ai_king',
+        createdAt: 1740726577000,
+        title: '深度对比：Claude 3.7 vs DeepSeek vs GPT-4o，谁才是真正的AI之王？',
+        description:
+            'Claude 3.7、DeepSeek和GPT-4o在AI领域的性能、应用场景和技术特点进行深度对比，分析各自在自然语言处理、生成能力和实际应用中的表现，探讨谁在AI技术中占据领先地位，成为真正的AI之王。',
+        tags: [PERFORMANCE, ALGORITHMS, DATA_STRUCTURES, FRAMEWORKS, CODE_QUALITY],
+        content: '/blogs/2025/深度对比：Claude 3.7 vs DeepSeek vs GPT-4o，谁才是真正的AI之王？.md',
+    },
+    {
         id: 'ff043d5a-3a3e-4113-b110-dd879009214d',
         url: '',
         slug: 'master_this_api_boost_web_display_10x',
