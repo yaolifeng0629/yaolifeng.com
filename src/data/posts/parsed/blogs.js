@@ -51,6 +51,17 @@ import {
 
 export default [
     {
+        id: '3d6dab16-e3cd-43da-8e36-946275fd8cd7',
+        url: '',
+        slug: 'independent_dev_perks_product_promo_400_plus_backlinks_limited_offer',
+        createdAt: 1739158969167,
+        title: '独立开发者福利：产品推广 + 400+ 外链资源，限量开抢！',
+        description:
+            '独立开发者可通过该资源获取产品推广支持及超过400个外链资源，帮助提升产品曝光度和SEO效果。资源限量提供，适合需要快速扩大影响力的开发者。本质是为独立开发者提供高效的市场推广工具，解决产品初期流量和品牌认知度问题，助力产品快速成长。',
+        tags: [SEO],
+        content: '/blogs/2025/独立开发者福利：产品推广 + 400+ 外链资源，限量开抢！.md',
+    },
+    {
         id: '8d3129c8-d477-4453-996d-3a7823f8c363',
         url: '',
         slug: 'claude_3.7_vs_deepseek_vs_gpt-4o_ai_king',
