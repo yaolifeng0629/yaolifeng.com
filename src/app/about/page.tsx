@@ -1,20 +1,23 @@
 import React from 'react';
+
+import Image from 'next/image';
 import Link from 'next/link';
+
+import { Button } from '@/components/ui/button';
+
 import { SocialMedia } from '@/components/home';
-import { Wrapper } from '@/components/wrapper';
 import {
     IconBrandGithub,
     IconLogoBing,
     IconLogoGoogle,
     IconSkillCSS,
-    IconSkillVue,
-    IconSkillJquery,
-    IconSkillJava,
     IconSkillDocker,
     IconSkillFigmaDark,
     IconSkillFigmaLight,
     IconSkillHTML,
+    IconSkillJava,
     IconSkillJavaScript,
+    IconSkillJquery,
     IconSkillMysqlDark,
     IconSkillMysqlLight,
     IconSkillNextjsDark,
@@ -28,11 +31,13 @@ import {
     IconSkillStackoverflowLight,
     IconSkillTailwindcssDark,
     IconSkillTailwindcssLight,
-    IconSkillTypeScript
+    IconSkillTypeScript,
+    IconSkillVue,
 } from '@/components/icons';
-import { Button } from '@/components/ui/button';
+import { Wrapper } from '@/components/wrapper';
 
 import { NICKNAME } from '@/constants';
+
 // import type { Metadata } from 'next';
 
 // export const metadata: Metadata = {
@@ -53,7 +58,7 @@ export default function Page() {
                 <div
                     className="animate-fade-up animate-ease-in-out"
                     style={{
-                        animationDelay: `${getDelay()}ms`
+                        animationDelay: `${getDelay()}ms`,
                     }}
                 >
                     <h2>我是谁</h2>
@@ -66,7 +71,7 @@ export default function Page() {
                 <div
                     className="animate-fade-up animate-ease-in-out"
                     style={{
-                        animationDelay: `${getDelay()}ms`
+                        animationDelay: `${getDelay()}ms`,
                     }}
                 >
                     <h2>我的技能</h2>
@@ -75,7 +80,7 @@ export default function Page() {
                 <div
                     className="animate-fade-up animate-ease-in-out"
                     style={{
-                        animationDelay: `${getDelay()}ms`
+                        animationDelay: `${getDelay()}ms`,
                     }}
                 >
                     <h3>前端</h3>
@@ -115,7 +120,7 @@ export default function Page() {
                 <div
                     className="animate-fade-up animate-ease-in-out"
                     style={{
-                        animationDelay: `${getDelay()}ms`
+                        animationDelay: `${getDelay()}ms`,
                     }}
                 >
                     <h3>后端</h3>
@@ -141,14 +146,14 @@ export default function Page() {
                                 <IconSkillMysqlDark className="mx-1 translate-y-0.5 dark:hidden" />
                                 <IconSkillMysqlLight className="mx-1 hidden translate-y-0.5 dark:inline-block" />
                             </> */}
-                             Prisma 搞全栈开发
+                            Prisma 搞全栈开发
                         </li>
                     </ul>
                 </div>
                 <div
                     className="animate-fade-up animate-ease-in-out"
                     style={{
-                        animationDelay: `${getDelay()}ms`
+                        animationDelay: `${getDelay()}ms`,
                     }}
                 >
                     <h3>其它</h3>
@@ -167,8 +172,8 @@ export default function Page() {
                         </li> */}
                         <li>
                             <IconSkillDocker className="mx-1 translate-y-0.5" />
-                            Docker +<span className="line-through">Docker Desktop 太卡了</span>+
-                            Orbstack，Docker 本地起数据库服务是真的方便
+                            Docker +<span className="line-through">Docker Desktop 太卡了</span>+ Orbstack，Docker
+                            本地起数据库服务是真的方便
                         </li>
                         <li>
                             使用
@@ -176,8 +181,7 @@ export default function Page() {
                                 <IconSkillNginx className="mx-1 translate-y-0.5" />
                                 NGINX （相比 Caddy 配置有点麻烦）
                             </span>
-                            、 Caddy （配置超简单，无需手动配置 HTTPS 证书），反向代理 + 配置 HTTPS +
-                            开启 HTTP2
+                            、 Caddy （配置超简单，无需手动配置 HTTPS 证书），反向代理 + 配置 HTTPS + 开启 HTTP2
                         </li>
                         <li>
                             <>
@@ -206,7 +210,7 @@ export default function Page() {
                 <div
                     className="animate-fade-up animate-ease-in-out"
                     style={{
-                        animationDelay: `${getDelay()}ms`
+                        animationDelay: `${getDelay()}ms`,
                     }}
                 >
                     <h2>我的设备</h2>
@@ -226,7 +230,7 @@ export default function Page() {
                 <div
                     className="animate-fade-up animate-ease-in-out"
                     style={{
-                        animationDelay: `${getDelay()}ms`
+                        animationDelay: `${getDelay()}ms`,
                     }}
                 >
                     <h2>联系我</h2>
@@ -241,6 +245,9 @@ export default function Page() {
                                 </Button>
                             </li>
                         ))}
+                        <Link href="/sponsor.html" className={'text-sm md:text-base'}>
+                            <Image src="/sponsor/buy_coffee.png" width={140} height={40} alt="Buy me a coffee" />
+                        </Link>
                     </ul>
                 </div>
             </div>

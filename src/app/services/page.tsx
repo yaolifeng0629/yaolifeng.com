@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -125,6 +126,9 @@ export default function ServicesPage() {
                             </Button>
                         </li>
                     ))}
+                    <Link href="/sponsor.html" className={'text-sm md:text-base'}>
+                        <Image src="/sponsor/buy_coffee.png" width={140} height={40} alt="Buy me a coffee" />
+                    </Link>
                 </ul>
             </div>
         </Wrapper>
