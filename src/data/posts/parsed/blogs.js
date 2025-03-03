@@ -51,6 +51,17 @@ import {
 
 export default [
     {
+        id: '475aa1b6-f320-4f9f-9fdc-5c5290b9873f',
+        url: '',
+        slug: 'complete_summary_js_new_features_last_5_years',
+        createdAt: 1740976074000,
+        title: '【完整汇总】近 5 年 JavaScript 新特性完整总览',
+        description:
+            '近5年JavaScript新特性全面梳理，涵盖ES2015至ES2022的核心更新，包括箭头函数、类、模块化、Promise、async/await、可选链、空值合并、BigInt、动态导入、私有字段、顶层await等语法改进与API增强，帮助开发者快速掌握现代JavaScript开发的核心工具与最佳实践。',
+        tags: [JAVASCRIPT, BROWSER_APIS, FRAMEWORKS, BUILD_TOOLS, DESIGN_PATTERNS],
+        content: '/blogs/2025/【完整汇总】近 5 年 JavaScript 新特性完整总览.md',
+    },
+    {
         id: '3d6dab16-e3cd-43da-8e36-946275fd8cd7',
         url: '',
         slug: 'independent_dev_perks_product_promo_400_plus_backlinks_limited_offer',
