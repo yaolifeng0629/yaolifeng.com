@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from '@/components/ui/tooltip';
@@ -105,6 +106,14 @@ const HeroSection = () => {
                     )}
                 >
                     关于我
+                </Link>
+                <Link
+                    href="/sponsor.html"
+                    className={cn(
+                        'text-sm md:text-base'
+                    )}
+                >
+                    <Image src="/sponsor/buy_coffee.png" width={140} height={40} alt="Buy me a coffee" />
                 </Link>
             </div>
             <ul
