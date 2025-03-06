@@ -51,6 +51,17 @@ import {
 
 export default [
     {
+        id: 'dea89bf4-7d5e-46c0-a318-bbc7ea9355b2',
+        url: '',
+        slug: 'top_10_payment_platforms_analysis_for_developers',
+        createdAt: 1739979252195,
+        title: '【实战分享】10大支付平台全方面分析，独立开发必备！',
+        description:
+            '文章深入剖析了10大主流支付平台的核心特点、技术实现、API集成、费用结构及适用场景，为独立开发者提供全面的支付解决方案参考。内容涵盖支付流程优化、安全性设计、用户体验提升及多平台兼容性，帮助开发者快速选择适合的支付工具，降低开发成本，提升项目商业化能力。',
+        tags: [JAVASCRIPT, REST_API, SECURITY, PERFORMANCE, TESTING],
+        content: '/blogs/2025/【实战分享】10大支付平台全方面分析，独立开发必备！.md',
+    },
+    {
         id: '475aa1b6-f320-4f9f-9fdc-5c5290b9873f',
         url: '',
         slug: 'complete_summary_js_new_features_last_5_years',
