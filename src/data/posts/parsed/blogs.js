@@ -51,6 +51,17 @@ import {
 
 export default [
     {
+        id: '81e03952-aaa4-481e-aa0d-92a64cfb0776',
+        url: '',
+        slug: 'self_media_hot_trends_36_top_accounts_secrets',
+        createdAt: 1741596361000,
+        title: '自媒体爆款秘籍：36个一线大号都在偷偷用的热搜平台',
+        description:
+            '自媒体爆款秘籍揭示了36个一线大号常用的热搜平台，帮助内容创作者快速获取流量和曝光。这些平台包括社交媒体、搜索引擎、新闻聚合工具等，通过分析热门话题、关键词和用户行为，优化内容策略。本质在于利用数据驱动的内容分发机制，精准捕捉用户兴趣，提升内容传播效率，从而实现爆款内容的打造和持续增长。',
+        tags: [SEO, PERFORMANCE, RESPONSIVE_DESIGN, UI_UX, WEB_COMPONENTS],
+        content: '/blogs/2025/自媒体爆款秘籍：36个一线大号都在偷偷用的热搜平台.md',
+    },
+    {
         id: 'dea89bf4-7d5e-46c0-a318-bbc7ea9355b2',
         url: '',
         slug: 'top_10_payment_platforms_analysis_for_developers',
