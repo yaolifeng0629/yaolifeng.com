@@ -93,4 +93,14 @@ export const Projects = [
         avatar: '/projects/favicon-countdown.png',
         home_link: 'https://countdown.us.kg',
     },
+    {
+        name: 'Ai-UI-UX-Design',
+        description:
+            '智能健康助手 / 情绪化社交软件 原型设计稿 （Emotional Social Software and Smart Health Assistand Prototype Design）',
+        link: 'https://github.com/yaolifeng0629/Ai-UI-UX-Design',
+        author: 'yaolifeng0629',
+        author_link: 'https://github.com/yaolifeng0629',
+        avatar: 'https://avatars.githubusercontent.com/u/88535417?v=4',
+        home_link: 'https://yaolifeng0629.github.io/Ai-UI-UX-Design/',
+    },
 ];
