@@ -51,6 +51,17 @@ import {
 
 export default [
     {
+        id: 'b2058c0e-ba5c-4f73-b104-71bdf0c6b6e2',
+        url: '',
+        slug: 'search_tips_you_dont_know',
+        createdAt: 1742371060000,
+        title: '这些搜索技巧你不会？',
+        description:
+            '文章深入探讨了前端开发中常用的搜索技巧，帮助开发者更高效地查找和解决问题。内容包括如何利用浏览器的开发者工具快速定位代码、使用正则表达式进行高级搜索、掌握搜索引擎的高级语法以精准获取资源、以及如何利用快捷键和插件提升搜索效率。通过这些技巧，开发者可以显著减少调试时间，提高工作效率，从而更专注于核心开发任务。',
+        tags: [JAVASCRIPT, HTML, CSS, SEO, BROWSER_APIS],
+        content: '/blogs/2025/这些搜索技巧你不会？.md',
+    },
+    {
         id: '233596a9-65b5-43ef-be7a-b57be7593e94',
         url: '',
         slug: 'true_ai_boom_what_is_it',
