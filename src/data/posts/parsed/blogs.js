@@ -51,6 +51,17 @@ import {
 
 export default [
     {
+        id: '233596a9-65b5-43ef-be7a-b57be7593e94',
+        url: '',
+        slug: 'true_ai_boom_what_is_it',
+        createdAt: 1742002137836,
+        title: '真正的AI风口，竟是它？',
+        description:
+            '真正的AI风口并非传统认知中的通用人工智能，而是聚焦于特定领域和场景的垂直AI应用。这些应用通过深度学习、自然语言处理等技术，在医疗、金融、教育等行业中实现高效解决方案。垂直AI的优势在于其针对性强、数据需求相对较少且易于落地，能够快速产生商业价值。随着技术成熟和市场需求增长，垂直AI将成为推动AI产业发展的核心动力，引领下一波技术革命。',
+        tags: [JAVASCRIPT, REACT, VUE, ANGULAR, FRAMEWORKS],
+        content: '/blogs/2025/真正的AI风口，竟是它？.md',
+    },
+    {
         id: '81e03952-aaa4-481e-aa0d-92a64cfb0776',
         url: '',
         slug: 'self_media_hot_trends_36_top_accounts_secrets',
