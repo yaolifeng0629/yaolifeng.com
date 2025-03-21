@@ -51,6 +51,17 @@ import {
 
 export default [
     {
+        id: '75dfd2d1-cc1b-4b23-8d2b-912480751110',
+        url: '',
+        slug: 'ai_understand_your_questions',
+        createdAt: 1742524112000,
+        title: 'AI 真的懂你问的问题吗？',
+        description:
+            'AI在理解用户问题方面的能力是有限的，尽管它能够处理大量数据并生成看似合理的回答，但其本质是基于模式识别和概率计算，而非真正的理解。AI缺乏人类的情境感知和深层逻辑推理能力，因此在处理复杂、模糊或需要背景知识的问题时，可能会出现误解或错误回答。AI的“理解”更多是表面化的，依赖于训练数据的广度和质量，而非真正的认知能力。',
+        tags: [JAVASCRIPT, FRAMEWORKS, STATE_MANAGEMENT, BUILD_TOOLS],
+        content: '/blogs/2025/AI 真的懂你问的问题吗？.md',
+    },
+    {
         id: 'b2058c0e-ba5c-4f73-b104-71bdf0c6b6e2',
         url: '',
         slug: 'search_tips_you_dont_know',
