@@ -91,7 +91,7 @@ export const Projects = [
         author: 'yaolifeng0629',
         author_link: 'https://github.com/yaolifeng0629',
         avatar: '/projects/favicon-countdown.png',
-        home_link: 'https://countdown.us.kg',
+        home_link: 'https://countdown-cp.netlify.app',
     },
     {
         name: 'Ai-UI-UX-Design',
