@@ -46,3 +46,4 @@ export const ANIMATION = '动画';
 export const SVG = 'SVG';
 export const CANVAS = 'Canvas';
 export const WEBGL = 'WebGL';
+export const AI = 'AI';

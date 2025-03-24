@@ -1,4 +1,5 @@
 import {
+    AI,
     ALGORITHMS,
     ANGULAR,
     ANIMATION,
@@ -51,6 +52,17 @@ import {
 
 export default [
     {
+        id: '79f2b760-3cb9-435d-af44-0aa16bee87ac',
+        url: '',
+        slug: 'from_developer_to_instructor_teaching_ai_coding',
+        createdAt: 1740930001157,
+        title: '从开发者到讲师，我第一次教跨行业AI写代码的心路历程',
+        description:
+            '一位前端开发者转型为讲师，首次尝试教授跨行业学员使用AI工具编写代码的经历。文章分享了从技术实践到教学设计的转变过程，探讨了如何将复杂的编程概念简化以适应非技术背景学员的需求。重点分析了教学过程中遇到的挑战，如学员理解差异、AI工具的局限性，以及如何通过调整教学策略提升学习效果。同时，反思了自身从开发者到教育者的角色转变，强调了沟通与耐心在跨行业教学中的重要性。',
+        tags: [JAVASCRIPT, AI, FRAMEWORKS],
+        content: '/blogs/2025/从开发者到讲师，我第一次教跨行业AI写代码的心路历程.md',
+    },
+    {
         id: '75dfd2d1-cc1b-4b23-8d2b-912480751110',
         url: '',
         slug: 'ai_understand_your_questions',
@@ -58,7 +70,7 @@ export default [
         title: 'AI 真的懂你问的问题吗？',
         description:
             'AI在理解用户问题方面的能力是有限的，尽管它能够处理大量数据并生成看似合理的回答，但其本质是基于模式识别和概率计算，而非真正的理解。AI缺乏人类的情境感知和深层逻辑推理能力，因此在处理复杂、模糊或需要背景知识的问题时，可能会出现误解或错误回答。AI的“理解”更多是表面化的，依赖于训练数据的广度和质量，而非真正的认知能力。',
-        tags: [JAVASCRIPT, FRAMEWORKS, STATE_MANAGEMENT, BUILD_TOOLS],
+        tags: [JAVASCRIPT, AI, FRAMEWORKS, STATE_MANAGEMENT, BUILD_TOOLS],
         content: '/blogs/2025/AI 真的懂你问的问题吗？.md',
     },
     {
