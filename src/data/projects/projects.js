@@ -103,4 +103,13 @@ export const Projects = [
         avatar: 'https://avatars.githubusercontent.com/u/88535417?v=4',
         home_link: 'https://yaolifeng0629.github.io/Ai-UI-UX-Design/',
     },
+    {
+        name: 'Delete-Repos',
+        description: 'Delete Repos（批量删除 GitHub/Gitee 仓库的 Chrome 扩展）',
+        link: 'https://github.com/yaolifeng0629/Delete-Repos',
+        author: 'yaolifeng0629',
+        author_link: 'https://github.com/yaolifeng0629',
+        avatar: 'https://avatars.githubusercontent.com/u/88535417?v=4',
+        home_link: 'https://github.com/yaolifeng0629/Delete-Repos',
+    },
 ];
