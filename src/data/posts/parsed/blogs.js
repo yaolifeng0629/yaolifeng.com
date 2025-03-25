@@ -52,6 +52,16 @@ import {
 
 export default [
     {
+        "id": "50e2a867-c811-40c2-8db8-31d5f15b23a4",
+        "url": "",
+        "slug": "must_use_this_amazing_lib_for_timed_tasks",
+        "createdAt": 1742960051000,
+        "title": "做定时任务，一定要用这个神库！！",
+        "description": "前端开发中实现定时任务的高效解决方案，重点推荐特定功能强大的第三方库。剖析该库的核心优势：精准的定时调度能力、轻量级无依赖的设计、兼容浏览器与Node.js环境。本质在于解决原生setInterval的缺陷（如时间漂移、内存泄漏），提供链式API、错误恢复机制和可视化调试工具。通过对比传统方案，突显其异常处理、性能优化和跨平台支持特性，最终以代码示例展示秒级任务、循环策略等实战场景的应用价值。",
+        "tags": [JAVASCRIPT, NODEJS],
+        "content": "/blogs/2025/做定时任务，一定要用这个神库！！.md"
+    },
+    {
         id: '79f2b760-3cb9-435d-af44-0aa16bee87ac',
         url: '',
         slug: 'from_developer_to_instructor_teaching_ai_coding',
