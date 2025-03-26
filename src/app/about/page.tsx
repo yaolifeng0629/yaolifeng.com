@@ -64,7 +64,7 @@ export default function Page() {
                     <h2>我是谁</h2>
                     <p>
                         Hi~ 我是{NICKNAME}
-                        ，一个独立前端开发者
+                        ，一名向往自由职业的独立开发者
                     </p>
                 </div>
 
@@ -103,11 +103,6 @@ export default function Page() {
                                 <IconSkillReactDark className="mx-1 translate-y-0.5 dark:hidden" />
                                 <IconSkillReactLight className="mx-1 hidden translate-y-0.5 dark:inline-block" />
                             </>
-                            React +
-                            <>
-                                <IconSkillNextjsDark className="mx-1 translate-y-0.5 dark:hidden" />
-                                <IconSkillNextjsLight className="mx-1 hidden translate-y-0.5 dark:inline-block" />
-                            </>
                             Next.js +
                             <>
                                 <IconSkillTailwindcssDark className="mx-1 translate-y-0.5 dark:hidden" />
@@ -141,7 +136,7 @@ export default function Page() {
                                 <IconSkillNextjsDark className="mx-1 translate-y-0.5 dark:hidden" />
                                 <IconSkillNextjsLight className="mx-1 hidden translate-y-0.5 dark:inline-block" />
                             </>
-                            Next.js +
+                            Next.js + NextAuth +
                             {/* <>
                                 <IconSkillMysqlDark className="mx-1 translate-y-0.5 dark:hidden" />
                                 <IconSkillMysqlLight className="mx-1 hidden translate-y-0.5 dark:inline-block" />
@@ -158,7 +153,7 @@ export default function Page() {
                 >
                     <h3>其它</h3>
                     <ul>
-                        <li>wezTerm（xTerminal） + Fira Code，用起来还不错</li>
+                        <li>Warp(Wave) + Fira Code，用起来还不错</li>
                         {/* <li>
                             用过 <IconLogoCentOS className="mx-1 translate-y-0.5" />
                             CentOS、
@@ -170,20 +165,21 @@ export default function Page() {
                             <IconLogoRockyLinux className="mx-1 translate-y-0.5" />
                             Rocky Linux （最近使用）
                         </li> */}
-                        <li>
+                        {/* <li>
                             <IconSkillDocker className="mx-1 translate-y-0.5" />
                             Docker +<span className="line-through">Docker Desktop 太卡了</span>+ Orbstack，Docker
                             本地起数据库服务是真的方便
-                        </li>
-                        <li>
+                        </li> */}
+                        {/* <li>
                             使用
                             <span className="line-through">
                                 <IconSkillNginx className="mx-1 translate-y-0.5" />
                                 NGINX （相比 Caddy 配置有点麻烦）
                             </span>
                             、 Caddy （配置超简单，无需手动配置 HTTPS 证书），反向代理 + 配置 HTTPS + 开启 HTTP2
-                        </li>
+                        </li> */}
                         <li>
+                            主要蓝湖，
                             <>
                                 <IconSkillFigmaDark className="mx-1 translate-y-0.5 dark:hidden" />
                                 <IconSkillFigmaLight className="mx-1 hidden translate-y-0.5 dark:inline-block" />
@@ -202,7 +198,7 @@ export default function Page() {
                                 <IconSkillStackoverflowDark className="mx-1 translate-y-0.5 dark:hidden" />
                                 <IconSkillStackoverflowLight className="mx-1 hidden translate-y-0.5 dark:inline-block" />
                             </>
-                            + Stack Overflow + Chat GPT 解决遇到的各种问题，复制粘贴我最行 🙋
+                            + Stack Overflow + GPT 解决遇到的各种问题，复制粘贴我最行 🙋
                         </li>
                     </ul>
                 </div>
@@ -215,11 +211,7 @@ export default function Page() {
                 >
                     <h2>我的设备</h2>
                     <ul>
-                        <li>
-                            Colorful i7-13700HX/4060/2k Size：16G + 1TB，
-                            <span className="line-through">从最开始到现在的第二台笔记本</span>
-                            🙃
-                        </li>
+                        <li>Colorful i7-13700HX/4060/2k Size：16G + 1TB</li>
                         <li>七彩虹将星 x15：16G + 1TB + i7-13700HX/4060 165HZ / 2K</li>
                         <li>屏幕：KTC 23.8英寸 / HDR400</li>
                         <li>键盘：（ikbc）K108 红轴</li>
