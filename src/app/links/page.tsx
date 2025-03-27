@@ -29,6 +29,10 @@ const friendLinks: FriendLink[] = [
         name: '陈随易',
         url: 'https://me.yicode.tech'
     },
+    {
+        name: 'justin3go',
+        url: 'https://justin3go.com'
+    },
 ];
 
 export default function LinksPage() {
