@@ -52,6 +52,36 @@ import {
 
 export default [
     {
+        "id": "ac4e0909-c580-41fe-8649-a028ed7de68d",
+        "url": "",
+        "slug": "docx_preview_must_use_this_lib",
+        "createdAt": 1744071581000,
+        "title": "做Docx预览，一定要做这个神库！",
+        "description": "Docx预览功能在前端开发中常遇到兼容性问题，而某个特定库能高效解决这一痛点。该库可能具备轻量化、跨平台渲染一致性、样式保真度高等核心优势，支持复杂表格、公式、批注等Word特有元素的精准解析。其底层或采用WebAssembly或虚拟DOM技术优化性能，避免传统转PDF或依赖后端方案带来的延迟。博客会对比常见方案如Mammoth.js或Office Online的局限性，强调该库在加载速度、交互能力或移动端适配上的突破性表现。可能涉及如何通过API实现实时编辑、水印添加等扩展功能，并提供代码片段演示基础集成步骤。",
+        "tags": [JAVASCRIPT, REACT, VUE, WEBPACK, VITE],
+        "content": "/blogs/2025/做Docx预览，一定要做这个神库！.md"
+    },
+    {
+        "id": "aabae14d-748a-43ec-bbeb-c97560a9ab17",
+        "url": "",
+        "slug": "must-know_mcp_websites",
+        "createdAt": 1743553181000,
+        "title": "关于MCP，这几个网站你一定要知道！",
+        "description": "MCP相关的高质量网站资源推荐，列举多个对前端开发者有价值的网站，涵盖工具、教程、社区或案例库等方向，帮助读者快速获取MCP相关的高效学习途径或实用工具。本质是通过精选资源整合，解决开发者信息过载问题，直接提供经过筛选的优质信息入口，提升学习效率。可能涉及网站类型包括官方文档平台、第三方工具站、技术博客、开源项目库或在线实验环境等，每个推荐会附带核心价值点说明。",
+        "tags": [JAVASCRIPT, REACT, VUE, ANGULAR, FRAMEWORKS],
+        "content": "/blogs/2025/关于MCP，这几个网站你一定要知道！.md"
+    },
+    {
+        "id": "6f5efec3-25b8-4d12-a061-0c5c9dac04ba",
+        "url": "",
+        "slug": "must_learn_10k_star_nodejs_project",
+        "createdAt": 1743121181000,
+        "title": "关于Node.js，一定要学这个10+万Star项目 ！！",
+        "description": "Node.js领域内一个超过10万Star的开源项目具有极高学习价值，其核心在于通过真实的高质量代码库展示Node.js的最佳实践、架构设计与性能优化方案。该项目可能涉及服务端开发核心场景如异步编程、模块化、中间件机制、Stream处理或全栈框架集成，其社区活跃度和广泛采用证明了技术方案的可靠性。学习此类项目能快速掌握企业级开发中的关键技巧，理解如何构建可扩展的Node.js应用，同时接触前沿生态工具链。Star数量作为技术影响力的量化指标，暗示项目解决了开发者普遍痛点，可能是Express、NestJS等主流框架或工具库的底层实现。通过逆向工程这类项目，开发者能突破基础语法层面向工程化进阶。",
+        "tags": [NODEJS, JAVASCRIPT, EXPRESS, BUILD_TOOLS, PERFORMANCE],
+        "content": "/blogs/2025/关于Node.js，一定要学这个10+万Star项目 ！！.md"
+    },
+    {
         "id": "50e2a867-c811-40c2-8db8-31d5f15b23a4",
         "url": "",
         "slug": "must_use_this_amazing_lib_for_timed_tasks",
